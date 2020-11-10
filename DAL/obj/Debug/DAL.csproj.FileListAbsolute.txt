@@ -1,0 +1,2 @@
+C:\Users\Антон\source\repos\MobOperator\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\Антон\source\repos\MobOperator\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache

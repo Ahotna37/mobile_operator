@@ -1,0 +1,5 @@
+C:\Users\Антон\source\repos\MobOperator\BLL\bin\Debug\BLL.dll
+C:\Users\Антон\source\repos\MobOperator\BLL\bin\Debug\BLL.pdb
+C:\Users\Антон\source\repos\MobOperator\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\Антон\source\repos\MobOperator\BLL\obj\Debug\BLL.dll
+C:\Users\Антон\source\repos\MobOperator\BLL\obj\Debug\BLL.pdb
