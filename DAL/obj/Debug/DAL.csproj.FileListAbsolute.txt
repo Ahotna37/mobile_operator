@@ -1,2 +1,12 @@
-C:\Users\Антон\source\repos\MobOperator\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
 C:\Users\Антон\source\repos\MobOperator\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Антон\source\repos\MobOperator\DAL\bin\Debug\DAL.dll.config
+C:\Users\Антон\source\repos\MobOperator\DAL\bin\Debug\DAL.dll
+C:\Users\Антон\source\repos\MobOperator\DAL\bin\Debug\DAL.pdb
+C:\Users\Антон\source\repos\MobOperator\DAL\bin\Debug\EntityFramework.dll
+C:\Users\Антон\source\repos\MobOperator\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Антон\source\repos\MobOperator\DAL\bin\Debug\EntityFramework.xml
+C:\Users\Антон\source\repos\MobOperator\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Антон\source\repos\MobOperator\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\Антон\source\repos\MobOperator\DAL\obj\Debug\DAL.dll
+C:\Users\Антон\source\repos\MobOperator\DAL\obj\Debug\DAL.pdb
+C:\Users\Антон\source\repos\MobOperator\DAL\obj\Debug\DAL.csprojAssemblyReference.cache

@@ -42,6 +42,7 @@ namespace MobOperator
         public MainWindow()
         {
             InitializeComponent();
+            Application.Current.MainWindow = this;
             this.Loaded += MainWindow_Loaded;
             //DataContext = new MainWindowModel();
         }

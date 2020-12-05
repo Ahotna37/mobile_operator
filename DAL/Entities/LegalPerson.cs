@@ -24,8 +24,6 @@ namespace DAL.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id { get; set; }
 
-        public int? idClient { get; set; }
-
         public virtual Client Client { get; set; }
     }
 }

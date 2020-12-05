@@ -12,15 +12,17 @@ namespace DAL.Entities
         [Column(TypeName = "date")]
         public DateTime? dateCall { get; set; }
 
-        public TimeSpan? timeTalk { get; set; }
+        public int? timeTalk { get; set; }
 
         [StringLength(10)]
         public string numberWasCall { get; set; }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int id { get; set; }
+        public int? callType { get; set; }
 
         public int? idClient { get; set; }
+
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int id { get; set; }
 
         public virtual Client Client { get; set; }
     }

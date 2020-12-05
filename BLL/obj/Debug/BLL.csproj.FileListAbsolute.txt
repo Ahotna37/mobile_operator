@@ -3,3 +3,13 @@ C:\Users\Антон\source\repos\MobOperator\BLL\bin\Debug\BLL.pdb
 C:\Users\Антон\source\repos\MobOperator\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
 C:\Users\Антон\source\repos\MobOperator\BLL\obj\Debug\BLL.dll
 C:\Users\Антон\source\repos\MobOperator\BLL\obj\Debug\BLL.pdb
+C:\Users\Антон\source\repos\MobOperator\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\Антон\source\repos\MobOperator\BLL\bin\Debug\BLL.dll.config
+C:\Users\Антон\source\repos\MobOperator\BLL\bin\Debug\DAL.dll
+C:\Users\Антон\source\repos\MobOperator\BLL\bin\Debug\EntityFramework.dll
+C:\Users\Антон\source\repos\MobOperator\BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Антон\source\repos\MobOperator\BLL\bin\Debug\DAL.pdb
+C:\Users\Антон\source\repos\MobOperator\BLL\bin\Debug\DAL.dll.config
+C:\Users\Антон\source\repos\MobOperator\BLL\bin\Debug\EntityFramework.xml
+C:\Users\Антон\source\repos\MobOperator\BLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Антон\source\repos\MobOperator\BLL\obj\Debug\BLL.csproj.CopyComplete

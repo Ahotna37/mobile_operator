@@ -18,7 +18,10 @@ namespace DAL.Entities
         public int idTariffPlan { get; set; }
 
         [Column(TypeName = "date")]
-        public DateTime? dateConnectTariff { get; set; }
+        public DateTime? dateConnectTariffBegin { get; set; }
+
+        [Column(TypeName = "date")]
+        public DateTime? dateConnectTariffEnd { get; set; }
 
         public virtual Client Client { get; set; }
 

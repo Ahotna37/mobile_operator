@@ -5,9 +5,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MobOperator.View"
              mc:Ignorable="d" 
+             Background="WhiteSmoke"
              d:DesignHeight="675" d:DesignWidth="1200">
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.08*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.08*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -27,12 +31,12 @@
             <RowDefinition />
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Border Background="WhiteSmoke" BorderBrush="Gainsboro" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="1" Grid.RowSpan="16">
+        <Border Background="White" BorderBrush="Gainsboro" Grid.Column="0" Grid.ColumnSpan="3" BorderThickness="1" Grid.RowSpan="16">
         </Border>
- 
-        <Label Grid.Column="3" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold">У вас осталось
+
+        <Label Grid.Column="0"  Grid.ColumnSpan="10" Grid.Row="0" Grid.RowSpan="100"  Margin="20" VerticalAlignment = "Top" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold">У вас осталось
         </Label>
-        <Grid Grid.Column="3" Grid.Row="2" Grid.RowSpan="5" >
+        <Grid Grid.Column="1" Grid.Row="2" Grid.RowSpan="5" >
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -43,22 +47,20 @@
             </Border>
             <Label Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold">Минуты
             </Label>
-            <Label Grid.Column="0" Content="{Binding CountMinutes}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold">
-            </Label>
+            <Label Grid.Column="0" Content="{Binding CountMinutes}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold"/>
             <Label Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold">на 30 дней
             </Label>
 
             <Label Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold">Интернет
             </Label>
-            <Label Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold">7 ГБ
-            </Label>
+            <Label Content="{Binding CountGB}" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold"/>
             <Label Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold">на 30 дней
             </Label>
 
             <Label Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold">СМС
             </Label>
-            <Label Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold">100
-            </Label>
+            <Label Content="{Binding CountSMS}" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold"/>
+
             <Label Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold">на 30 дней
             </Label>
 

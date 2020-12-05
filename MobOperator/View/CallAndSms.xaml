@@ -8,6 +8,9 @@
              d:DesignHeight="675" d:DesignWidth="1200">
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.1*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -27,11 +30,11 @@
             <RowDefinition />
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Border Background="WhiteSmoke" BorderBrush="Gainsboro" Grid.Column="0" Grid.ColumnSpan="3" BorderThickness="1" Grid.RowSpan="16">
+        <Border Background="White" BorderBrush="Gainsboro" Grid.Column="0" Grid.ColumnSpan="3" BorderThickness="1" Grid.RowSpan="16">
         </Border>
-        <Label Grid.Column="3" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" Content="Звонки и СМС"/>
-        <TabControl Grid.Column="3" Grid.Row="2" Grid.RowSpan="13" >
-            <TabItem Header="Звонки">
+        <Label Grid.Column="0"  Grid.ColumnSpan="10" Grid.Row="0" Grid.RowSpan="100"  Margin="20" VerticalAlignment = "Top" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" Content="Звонки и СМС"/>
+        <TabControl Grid.Column="1" Grid.Row="2" Grid.RowSpan="13" >
+            <TabItem Header="Звонки" FontWeight="Bold">
                 <Grid >
 
                     <Grid.ColumnDefinitions>
@@ -56,20 +59,20 @@
                     </Grid.RowDefinitions>
                     <Border BorderBrush="Black" BorderThickness =" 1 1 1 1"  Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5">
                     </Border>
-                    <Label Grid.Column="0" HorizontalAlignment ="Center" VerticalAlignment="Center">Номер звонящего
+                    <Label Grid.Column="0" HorizontalAlignment ="Center" VerticalAlignment="Center" FontWeight="Bold">Номер звонящего
                     </Label>
-                    <Label Grid.Column="1" HorizontalAlignment ="Center" VerticalAlignment="Center">Кому звонили
+                    <Label Grid.Column="1" HorizontalAlignment ="Center" VerticalAlignment="Center" FontWeight="Bold">Кому звонили
                     </Label>
-                    <Label Grid.Column="2" HorizontalAlignment ="Center" VerticalAlignment="Center">Дата звонка
+                    <Label Grid.Column="2" HorizontalAlignment ="Center" VerticalAlignment="Center" FontWeight="Bold">Дата звонка
                     </Label>
-                    <Label Grid.Column="3" HorizontalAlignment ="Center" VerticalAlignment="Center">Время разговора
+                    <Label Grid.Column="3" HorizontalAlignment ="Center" VerticalAlignment="Center" FontWeight="Bold">Время разговора
                     </Label>
-                    <Label Grid.Column="4" HorizontalAlignment ="Center" VerticalAlignment="Center">Стоимость
+                    <Label Grid.Column="4" HorizontalAlignment ="Center" VerticalAlignment="Center" FontWeight="Bold">Стоимость
                     </Label>
                 </Grid>
 
             </TabItem>
-            <TabItem Header="СМС">
+            <TabItem Header="СМС" FontWeight="Bold">
                 <Grid >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width ="*"/>
@@ -92,13 +95,13 @@
                     </Grid.RowDefinitions>
                     <Border BorderBrush="Black" BorderThickness =" 1 1 1 1"  Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4">
                     </Border>
-                    <Label Grid.Column="0" HorizontalAlignment ="Center" VerticalAlignment="Center">Номер отправившего
+                    <Label Grid.Column="0" HorizontalAlignment ="Center" VerticalAlignment="Center" FontWeight="Bold">Номер отправившего
                     </Label>
-                    <Label Grid.Column="1" HorizontalAlignment ="Center" VerticalAlignment="Center">Кому отправили
+                    <Label Grid.Column="1" HorizontalAlignment ="Center" VerticalAlignment="Center" FontWeight="Bold">Кому отправили
                     </Label>
-                    <Label Grid.Column="2" HorizontalAlignment ="Center" VerticalAlignment="Center">Дата отправки
+                    <Label Grid.Column="2" HorizontalAlignment ="Center" VerticalAlignment="Center" FontWeight="Bold">Дата отправки
                     </Label>
-                    <Label Grid.Column="3" HorizontalAlignment ="Center" VerticalAlignment="Center">Стоимость
+                    <Label Grid.Column="3" HorizontalAlignment ="Center" VerticalAlignment="Center" FontWeight="Bold">Стоимость
                     </Label>
                 </Grid>
             </TabItem>

@@ -5,14 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MobOperator"
         mc:Ignorable="d"
-        Title="WindowAutorisarion" Height="675" Width="1200">
+        Background="WhiteSmoke"
+        Title="MainWindow" Height="675" Width="1200">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.015*" />
+            <ColumnDefinition Width="0.01*" />
             <ColumnDefinition Width="0.40*" />
-            <ColumnDefinition Width="0.015*" />
+            <ColumnDefinition Width="0.01*" />
+            <ColumnDefinition Width="0.05*" />
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.05*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -32,11 +34,11 @@
             <RowDefinition />
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Border Background="WhiteSmoke" BorderBrush="Gainsboro" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="1" Grid.RowSpan="16">
+        <Border Background="White" BorderBrush="Gainsboro" Grid.Column="0" Grid.ColumnSpan="3" BorderThickness="1" Grid.RowSpan="16">
         </Border>
-        <Label Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="14" FontWeight="Bold">Иванов Иван
+        <Label Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="14" FontWeight="DemiBold">Иванов Иван
         </Label>
-        <Label Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" >Тариф Смарт
+        <Label Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" >Тариф Смарт
         </Label>
         <Button Command="{Binding LoadMainWindow, Mode = OneTime}" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Margin="10,23.2,10.2,23.2" Grid.RowSpan="3" >Главная
         </Button>
@@ -48,6 +50,6 @@
         </Button>
         <Button Command="{Binding LoadService, Mode = OneTime}" Grid.Column="1" Grid.Row="10" VerticalAlignment="Center" Margin="10,23.4,10.2,23.8" Grid.RowSpan="3" >Услуги
         </Button>
-        <ContentPresenter Grid.Column="3" Grid.RowSpan="100" x:Name="ContentPresenterOutput"/>
+        <ContentPresenter Grid.Column="4" Grid.RowSpan="100" x:Name="ContentPresenterOutput"/>
     </Grid>
 </Window>

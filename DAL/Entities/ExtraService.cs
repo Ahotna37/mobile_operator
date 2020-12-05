@@ -23,6 +23,8 @@ namespace DAL.Entities
         [Column(TypeName = "ntext")]
         public string description { get; set; }
 
+        public bool? CanConnectThisSer { get; set; }
+
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id { get; set; }
 

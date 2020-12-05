@@ -11,16 +11,7 @@ namespace MobOperator.ViewModel
 {
     public class MainWindowModel
     {
-        /*        private string countMinutes;
-                public MainWindowModel()
-                {
-                    countMinutes = "100 минут";
-                }
-                public string CountMinutes { get { return countMinutes; } }*/
-
         public IMainWindowsCodeBehind CodeBehind { get; set; }
-        
-
         //ctor
         public MainWindowModel()
         {

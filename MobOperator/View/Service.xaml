@@ -8,6 +8,9 @@
              d:DesignHeight="675" d:DesignWidth="1200">
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.1*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -27,12 +30,12 @@
             <RowDefinition />
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Border Background="WhiteSmoke" BorderBrush="Gainsboro" Grid.Column="0" Grid.ColumnSpan="3" BorderThickness="1" Grid.RowSpan="16">
+        <Border Background="White" BorderBrush="Gainsboro" Grid.Column="0" Grid.ColumnSpan="3" BorderThickness="1" Grid.RowSpan="16">
         </Border>
-        <Label Grid.Column="3" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold">Услуги
+        <Label Grid.Column="0"  Grid.ColumnSpan="10" Grid.Row="0" Grid.RowSpan="100"  Margin="20" VerticalAlignment = "Top" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold">Услуги
         </Label>
 
-        <Grid Grid.Column="3" Grid.Row="3" Grid.RowSpan="7">
+        <Grid Grid.Column="1" Grid.Row="3" Grid.RowSpan="7">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="0.05*"/>
@@ -72,7 +75,9 @@
             </ListView>
 
         </Grid>
-        <Button Grid.Column="3" Grid.Row="11" VerticalAlignment="Center" Margin="106.8,23.4,105.6,23.8" Grid.RowSpan="3" >Выбрать услугу
+        <Button Grid.Column="1" Grid.Row="11" VerticalAlignment="Center" MaxWidth="300"  >Добавить услугу
+        </Button>
+        <Button Grid.Column="1" Grid.Row="13" VerticalAlignment="Center" MaxWidth="300"  >Удалить услугу
         </Button>
     </Grid>
 </UserControl>

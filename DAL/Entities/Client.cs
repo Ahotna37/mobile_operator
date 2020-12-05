@@ -21,8 +21,7 @@ namespace DAL.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id { get; set; }
 
-        [StringLength(10)]
-        public string phoneNumber { get; set; }
+        public int? phoneNumber { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime? dateConnect { get; set; }
@@ -33,6 +32,12 @@ namespace DAL.Entities
 
         [StringLength(10)]
         public string password { get; set; }
+
+        public int? freeMin { get; set; }
+
+        public int? freeSms { get; set; }
+
+        public float? freeGB { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Call> Call { get; set; }
@@ -45,7 +50,7 @@ namespace DAL.Entities
 
         public virtual LegalPerson LegalPerson { get; set; }
 
-        public virtual PhisicalPerson PhisicalPerson { get; set; }
+        public virtual PhysicalPerson PhysicalPerson { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Sms> Sms { get; set; }

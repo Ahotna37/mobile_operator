@@ -18,13 +18,25 @@ namespace DAL.Entities
         [StringLength(10)]
         public string name { get; set; }
 
-        public decimal? subscrFee { get; set; }
+        public decimal? costOneMinCallCity { get; set; }
 
-        public decimal? costOneMinCall { get; set; }
+        public decimal? costOneMinCallOutCity { get; set; }
 
-        public int? intGB { get; set; }
+        public decimal? CostOneMinCallInternation { get; set; }
+
+        public float? intGB { get; set; }
 
         public int? SMS { get; set; }
+
+        public bool? isPhysTar { get; set; }
+
+        public decimal? costChangeTar { get; set; }
+
+        public bool? CanConnectThisTar { get; set; }
+
+        public int? subcriptionFee { get; set; }
+
+        public int? freeMinuteForMonth { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id { get; set; }
