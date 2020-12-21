@@ -32,23 +32,24 @@
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
+            <RowDefinition />
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Border Background="White" BorderBrush="Gainsboro" Grid.Column="0" Grid.ColumnSpan="3" BorderThickness="1" Grid.RowSpan="16">
+        <Border Background="White" BorderBrush="Gainsboro" Grid.Column="0" Grid.ColumnSpan="3" BorderThickness="1" Grid.RowSpan="100">
         </Border>
-        <Label Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="14" FontWeight="DemiBold">Иванов Иван
-        </Label>
-        <Label Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" >Тариф Смарт
-        </Label>
-        <Button Command="{Binding LoadMainWindow, Mode = OneTime}" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Margin="10,23.2,10.2,23.2" Grid.RowSpan="3" >Главная
+        <Label Content="{Binding LabelNameUser, Mode = OneWay}"  Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="14" FontWeight="DemiBold"/>
+
+        <Label Content="{Binding  LabelBalanceUser, Mode = OneWay}" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" />
+        <Label Content="{Binding  LabelNumberPhoneUser, Mode = OneWay}" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" FontWeight="Bold" />
+        <Button Command="{Binding LoadMainWindow, Mode = OneTime}" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" Margin="10,23.2,10.2,23.2" Grid.RowSpan="3" >Главная
         </Button>
-        <Button Command="{Binding LoadAddBalance, Mode = OneTime}" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" Margin="10,23.2,10.2,23.733" Grid.RowSpan="3" >Пополнить счет
+        <Button Command="{Binding LoadAddBalance, Mode = OneTime}" Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" Margin="10,23.2,10.2,23.733" Grid.RowSpan="3" >Пополнить счет
         </Button>
-        <Button Command="{Binding LoadCallAndSms, Mode = OneTime}" Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" Margin="10,23.6,10.2,23.6" Grid.RowSpan="3" >Звонки и СМС
+        <Button Command="{Binding LoadCallAndSms, Mode = OneTime}" Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" Margin="10,23.6,10.2,23.6" Grid.RowSpan="3" >Звонки и СМС
         </Button>
-        <Button Command="{Binding LoadTariff, Mode = OneTime}" Grid.Column="1" Grid.Row="8" VerticalAlignment="Center" Margin="10,22.8,10.2,24.4" Grid.RowSpan="3" >Тарифы
+        <Button Command="{Binding LoadTariff, Mode = OneTime}" Grid.Column="1" Grid.Row="9" VerticalAlignment="Center" Margin="10,22.8,10.2,24.4" Grid.RowSpan="3" >Тарифы
         </Button>
-        <Button Command="{Binding LoadService, Mode = OneTime}" Grid.Column="1" Grid.Row="10" VerticalAlignment="Center" Margin="10,23.4,10.2,23.8" Grid.RowSpan="3" >Услуги
+        <Button Command="{Binding LoadService, Mode = OneTime}" Grid.Column="1" Grid.Row="11" VerticalAlignment="Center" Margin="10,23.4,10.2,23.8" Grid.RowSpan="3" >Услуги
         </Button>
         <ContentPresenter Grid.Column="4" Grid.RowSpan="100" x:Name="ContentPresenterOutput"/>
     </Grid>

@@ -10,7 +10,6 @@ namespace DAL.Entities
     public partial class ConnectTariff
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int idConnectTariff { get; set; }
 
         public int? idClient { get; set; }

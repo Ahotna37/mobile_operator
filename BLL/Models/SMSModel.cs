@@ -13,9 +13,11 @@ namespace BLL.Models
         public int? idClient { get; set; }
 
         public DateTime? dateSms { get; set; }
+        public string dateSmsShort { get; set; }
 
         public string recipientSms { get; set; }
         public string textSms { get; set; }
+        public decimal? costSMS { get; set; }
         public SMSModel()
         {
 
@@ -26,6 +28,8 @@ namespace BLL.Models
             id = sms.id;
             idClient = sms.idClient;
             dateSms = sms.dateSms;
+            costSMS = sms.costSMS;
+            dateSmsShort = Convert.ToDateTime(dateSms).ToString("d");
             recipientSms = sms.recipientSms;
             textSms = sms.textSms;
         }

@@ -35,7 +35,8 @@ namespace MobOperator.View
     }
     public partial class WindowBegin : Window, IBeginWindowCodeBehind
     {
-        
+        public AutorisationModel autorisationVM;
+        public RegistrationModel registrationVM;
         public WindowBegin()
         {
             InitializeComponent();
@@ -60,7 +61,7 @@ namespace MobOperator.View
                 case ViewTypeBegin.Autorisation:
                     //загружаем вьюшку, ее вьюмодель
                     Autorisation autorisationView = new Autorisation();
-                    AutorisationModel autorisationVM = new AutorisationModel(this);
+                    autorisationVM = new AutorisationModel(this);
                     autorisationView.DataContext = autorisationVM;
                     //отображаем
                     this.ContentAutorisationRegistration.Content = autorisationView;
@@ -68,16 +69,28 @@ namespace MobOperator.View
                 case ViewTypeBegin.Registration:
                     //загружаем вьюшку, ее вьюмодель
                     Registration registrationViev = new Registration();
-                    RegistrationModel registrationVM = new RegistrationModel(this);
+                    registrationVM = new RegistrationModel(this);
                     registrationViev.DataContext = registrationVM;
                     //отображаем
                     this.ContentAutorisationRegistration.Content = registrationViev;
                     break;
                 case ViewTypeBegin.MainWindow:
                     //загружаем вьюшку, ее вьюмодель
+                    MainWindowModel mainWindowVM = null;
+                    if (autorisationVM.IdUser != 0)
+                    {
+                        registrationVM = new RegistrationModel(this);
+                        registrationVM.IdUser = 0;
+                        mainWindowVM = new MainWindowModel(autorisationVM.IdUser);
+                    }
+                    if ( registrationVM.IdUser != 0)
+                    {
+                        mainWindowVM = new MainWindowModel(registrationVM.IdUser);
+                    }
                     MainWindow mainWindow = new MainWindow();
-                    //MainWindowModel mainWindowVM = new MainWindowModel();
-                    //mainWindow.DataContext = mainWindowVM;
+                    mainWindowVM.CodeBehind = mainWindow;
+                    mainWindow.DataContext = mainWindowVM;
+
                     //отображаем
                     //mainWindow.ContentPresenterOutput.Content = mainWindow;
                     //this.ContentAutorisationRegistration.Content = autorisationView;
@@ -85,6 +98,16 @@ namespace MobOperator.View
                     mainWindow.Show();
                     break;
             }
+/*            private void OpenMainWindow()
+            {
+                MainWindow sellerWin = new MainWindow();
+                SellerWindowVM vm = new SellerWindowVM(((dynamic)DataContext).LoginText);
+                vm.CodeBehind = sellerWin;
+                sellerWin.DataContext = vm;
+                sellerWin.Show();
+                Close();
+            }*/
+
         }
     }
 }

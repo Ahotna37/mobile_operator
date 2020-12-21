@@ -37,6 +37,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Caliburn.Micro, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.Core.3.2.0\lib\net45\Caliburn.Micro.dll</HintPath>
+    </Reference>
     <Reference Include="CommonServiceLocator, Version=2.0.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>..\packages\CommonServiceLocator.2.0.2\lib\net47\CommonServiceLocator.dll</HintPath>
     </Reference>
@@ -88,6 +91,8 @@
     <Compile Include="ViewModel\AutorisationModel.cs" />
     <Compile Include="ViewModel\BeginWindowModel.cs" />
     <Compile Include="ViewModel\CallAndSmsModel.cs" />
+    <Compile Include="ViewModel\CreateSmsModel.cs" />
+    <Compile Include="ViewModel\CreateCallModel.cs" />
     <Compile Include="ViewModel\MainControlModel.cs" />
     <Compile Include="ViewModel\MainWindowModel.cs" />
     <Compile Include="ViewModel\RegistrationModel.cs" />
@@ -101,6 +106,12 @@
     </Compile>
     <Compile Include="View\CallAndSms.xaml.cs">
       <DependentUpon>CallAndSms.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CreateSms.xaml.cs">
+      <DependentUpon>CreateSms.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CreateCall.xaml.cs">
+      <DependentUpon>CreateCall.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainControl.xaml.cs">
       <DependentUpon>MainControl.xaml</DependentUpon>
@@ -123,6 +134,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\CallAndSms.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CreateSms.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CreateCall.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

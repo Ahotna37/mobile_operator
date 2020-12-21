@@ -17,32 +17,34 @@ namespace MobOperator.ViewModel
         private IMainWindowsCodeBehind _MainCodeBehind;
         DbOperation dbOperation = new DbOperation();
         List<ClientModel> allClients;
+        private ClientModel client;
+        public string _labelMinUser;
+        public string _labelInternetUser;
+        public string _labelSMSPhoneUser;
 
         //ctor
-        public MainControlModel(IMainWindowsCodeBehind codeBehind)
+        public MainControlModel(int IdUser)
         {
-            if (codeBehind == null) throw new ArgumentNullException(nameof(codeBehind));
-            _MainCodeBehind = codeBehind;
+            /*            if (codeBehind == null) throw new ArgumentNullException(nameof(codeBehind));
+                        _MainCodeBehind = codeBehind;*/
+            client = dbOperation.GetItemClient(IdUser);
+            _labelMinUser =  Convert.ToString( client.freeMin);
+            _labelInternetUser = Convert.ToString(client.freeGB);
+            _labelSMSPhoneUser = Convert.ToString(client.freeSms);
 
 
         }
-        public int? CountMinutes(int id)
+        public string LabelMinOst
         {
-            allClients = dbOperation.GetAllClients();
-            ClientModel client = allClients.Where(i => i.id == id).FirstOrDefault();
-            return client.freeMin;
+            get => _labelMinUser;
         }
-        public int? CountSms(int id)
+        public string LabelInternetOst
         {
-            allClients = dbOperation.GetAllClients();
-            ClientModel client = allClients.Where(i => i.id == id).FirstOrDefault();
-            return client.freeSms;
+            get => _labelInternetUser;
         }
-        public float? CountGB(int id)
+        public string LabelSMSOst
         {
-            allClients = dbOperation.GetAllClients();
-            ClientModel client = allClients.Where(i => i.id == id).FirstOrDefault();
-            return client.freeGB;
+            get => _labelSMSPhoneUser;
         }
     }
 }

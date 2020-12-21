@@ -47,19 +47,19 @@
             </Border>
             <Label Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold">Минуты
             </Label>
-            <Label Grid.Column="0" Content="{Binding CountMinutes}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold"/>
+            <Label  Content="{Binding  LabelMinOst, Mode = OneWay}" Grid.Column="0"  VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold"/>
             <Label Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold">на 30 дней
             </Label>
 
             <Label Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold">Интернет
             </Label>
-            <Label Content="{Binding CountGB}" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold"/>
+            <Label Content="{Binding  LabelInternetOst, Mode = OneWay}" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold"/>
             <Label Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold">на 30 дней
             </Label>
 
             <Label Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold">СМС
             </Label>
-            <Label Content="{Binding CountSMS}" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold"/>
+            <Label Content="{Binding  LabelSMSOst, Mode = OneWay}" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold"/>
 
             <Label Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold">на 30 дней
             </Label>

@@ -12,15 +12,17 @@ using static MobOperator.View.WindowBegin;
 
 namespace MobOperator.ViewModel
 {
-    class AutorisationModel : INotifyPropertyChanged
+    public class AutorisationModel : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged = delegate { };
-
+        //public event PropertyChangedEventHandler PropertyChanged = delegate { };
+        public event PropertyChangedEventHandler PropertyChanged;
         //Fields
         private IBeginWindowCodeBehind _BeginCodeBehind;
 
-        private string _textBoxLoginText;
-        private string _passwordBoxLogin;
+        private string _textBoxLoginText ;
+        private string _textBoxPasswordText;
+        private int idUser;
+
 
         DbOperation dbOperation = new DbOperation();
         List<ClientModel> allClients;
@@ -48,7 +50,7 @@ namespace MobOperator.ViewModel
         }
         private void OutBeginWindow()
         {
-            
+            IdUser = CheckClient(_textBoxLoginText, _textBoxPasswordText);
             _BeginCodeBehind.LoadView(ViewTypeBegin.MainWindow);
         }
 
@@ -92,31 +94,42 @@ namespace MobOperator.ViewModel
             }
         }
 
-        public string PasswordBoxLogin
+        public int IdUser
         {
-            get => _passwordBoxLogin;
+            get => idUser;
             set
             {
-                _passwordBoxLogin = value;
-                OnPropertyChanged(nameof(_passwordBoxLogin));
+                idUser = value;
             }
         }
 
-        public int CheckClient(string _textBoxLoginText, string pass)
+        public string TextBoxPasswordText
         {
-            int idClient;
+            get => _textBoxPasswordText;
+            set
+            {
+                _textBoxPasswordText = value;
+                OnPropertyChanged(nameof(_textBoxPasswordText));
+            }
+        }
+
+        public int CheckClient(string _textBoxLoginText, string _textBoxPasswordText)
+        {
             allClients = dbOperation.GetAllClients();
-            ClientModel client = allClients.Where(i => i.phoneNumber == Convert.ToInt32(_textBoxLoginText)).FirstOrDefault();
-            if (client.password == pass)
+            ClientModel client = allClients.Where(i => i.phoneNumber == _textBoxLoginText).FirstOrDefault();
+            if (client != null)
             {
-                idClient = client.id;
+                if (client.password.Trim() == _textBoxPasswordText.Trim())
+                {
+                    return client.id;
+                }
+                else
+                {
+                    //errorMassage();
+                    return 0;
+                }
             }
-            else
-            {
-                //errorMassage();
-                return 0;
-            }
-            return idClient;
+            return 0;
         }
     }
 

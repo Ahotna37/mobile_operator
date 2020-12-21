@@ -14,14 +14,15 @@ namespace DAL.Entities
 
         public int? timeTalk { get; set; }
 
-        [StringLength(10)]
+        [StringLength(50)]
         public string numberWasCall { get; set; }
 
         public int? callType { get; set; }
 
+        public decimal? costCall { get; set; }
+
         public int? idClient { get; set; }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id { get; set; }
 
         public virtual Client Client { get; set; }

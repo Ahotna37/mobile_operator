@@ -10,7 +10,7 @@ namespace BLL.Models
     public class ClientModel
     {
         public int id { get; set; }
-        public int? phoneNumber { get; set; }
+        public string phoneNumber { get; set; }
         public DateTime? dateConnect { get; set; }
 
         public decimal? balance { get; set; }
@@ -23,6 +23,16 @@ namespace BLL.Models
         public int? freeSms { get; set; }
 
         public float? freeGB { get; set; }
+
+        public string name { get; set; }
+        public string surname { get; set; }
+        public DateTime? dateOfBirth { get; set; }
+        public string numberPassport { get; set; }
+
+        public string nameOrganisation { get; set; }
+        public string legalAdress { get; set; }
+        public string ITN { get; set; }
+        public DateTime? startDate { get; set; }
         public ClientModel()
         {
 
@@ -39,6 +49,20 @@ namespace BLL.Models
             freeGB = client.freeGB;
             freeMin = client.freeMin;
             freeSms = client.freeSms;
+            if (isPhysCl == true)
+            {
+                name = client.name;
+                surname = client.surName;
+                dateOfBirth = client.dateOfBirth;
+                numberPassport = client.numberPassport;
+            }
+            else
+            {
+                nameOrganisation = client.nameOrganization;
+                legalAdress = client.legalAdress;
+                ITN = client.ITN;
+                startDate = client.startDate;
+            }
             
         }
     }

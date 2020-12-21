@@ -15,11 +15,9 @@ namespace MobOperator.ViewModel
         private IMainWindowsCodeBehind _MainCodeBehind;
 
         //ctor
-        public TariffModel(IMainWindowsCodeBehind codeBehind)
+        public TariffModel(int idUsers)
         {
-            if (codeBehind == null) throw new ArgumentNullException(nameof(codeBehind));
 
-            _MainCodeBehind = codeBehind;
         }
     }
 }

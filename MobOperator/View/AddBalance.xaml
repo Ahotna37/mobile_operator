@@ -32,6 +32,8 @@
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Border Background="White" Grid.Column="0" Grid.ColumnSpan="4"  Grid.RowSpan="16">
@@ -39,24 +41,27 @@
         <Label Grid.Column="0"  Grid.ColumnSpan="10" Grid.Row="0" Grid.RowSpan="100"  Margin="20" VerticalAlignment = "Top" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold">Пополнить счет
         </Label>
         
-        <Border Background="GhostWhite" BorderBrush="Gainsboro" CornerRadius="10" Grid.ColumnSpan="3" Grid.Column="1" BorderThickness="1" Grid.Row="2" Grid.RowSpan="13">
+        <Border Background="GhostWhite" BorderBrush="Gainsboro" CornerRadius="10" Grid.ColumnSpan="3" Grid.Column="1" BorderThickness="1" Grid.Row="2" Grid.RowSpan="15">
         </Border>
         <Label Grid.Column="1" Grid.Row="3" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold">Номер телефона
         </Label>
-        <TextBox Grid.Column="2" Grid.Row="3"  VerticalAlignment="Bottom"   />
-        <Label Grid.Column="1" Grid.Row="5" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold">Номер карты
+        <TextBox  Text="{Binding  TextBoxNumberPhoneForAddText, Mode = OneWayToSource, UpdateSourceTrigger=PropertyChanged }" Grid.Column="2" Grid.Row="3"  VerticalAlignment="Bottom"   />
+        <Label Grid.Column="1" Grid.Row="5" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold">Сумма пополнения
         </Label>
-        <TextBox     Grid.Column="2" Grid.Row="5" VerticalAlignment="Bottom" />
-        <Label Grid.Column="1" Grid.Row="7" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold">Владелец карты
+        <TextBox  Text="{Binding  TextBoxSumForAddText, Mode = OneWayToSource, UpdateSourceTrigger=PropertyChanged }" Grid.Column="2" Grid.Row="5"  VerticalAlignment="Bottom"   />
+        <Label Grid.Column="1" Grid.Row="7" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold">Номер карты
         </Label>
-        <TextBox Grid.Column="2" Grid.Row="7"  VerticalAlignment="Bottom" />
-        <Label Grid.Column="1" Grid.Row="9" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold">Срок службы карты
+        <TextBox  Text="{Binding  TextBoxNumberBankCardText, Mode = OneWayToSource, UpdateSourceTrigger=PropertyChanged }"   Grid.Column="2" Grid.Row="7" VerticalAlignment="Bottom" />
+        <Label Grid.Column="1" Grid.Row="9" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold">Владелец карты
         </Label>
-        <TextBox Grid.Column="2" Grid.Row="9" VerticalAlignment="Bottom" />
-        <Label Grid.Column="1" Grid.Row="11" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold">CVV
+        <TextBox Text="{Binding  TextBoxNameOfBankCardText, Mode = OneWayToSource, UpdateSourceTrigger=PropertyChanged }" Grid.Column="2" Grid.Row="9"  VerticalAlignment="Bottom" />
+        <Label Grid.Column="1" Grid.Row="11" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold">Срок службы карты
         </Label>
-        <TextBox Grid.Column="2" Grid.Row="11" VerticalAlignment="Bottom"  />
-        <Button Grid.Column="2" Grid.Row="13" VerticalAlignment="Center" MaxWidth="300">Пополнить
+        <TextBox Text="{Binding  TextBoxDateBankCardText, Mode = OneWayToSource, UpdateSourceTrigger=PropertyChanged }" Grid.Column="2" Grid.Row="11" VerticalAlignment="Bottom" />
+        <Label Grid.Column="1" Grid.Row="13" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold">CVV
+        </Label>
+        <TextBox Text="{Binding  TextBoxCVVText, Mode = OneWayToSource, UpdateSourceTrigger=PropertyChanged }" Grid.Column="2" Grid.Row="13" VerticalAlignment="Bottom"  />
+        <Button Command="{Binding LoadAddBalanceInDb, Mode = OneTime}" Grid.Column="2" Grid.Row="15" VerticalAlignment="Center" MaxWidth="300">Пополнить
         </Button>
     </Grid>
 </UserControl>

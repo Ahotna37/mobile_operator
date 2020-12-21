@@ -26,5 +26,13 @@ namespace MobOperator.View
             InitializeComponent();
 /*            DataContext = new BeginWindowModel();*/
         }
+        private void PasswordBoxContentChanged(object sender, RoutedEventArgs e)
+        {
+            if (DataContext == null) return;
+
+            ((dynamic)DataContext).TextBoxPasswordText = ((PasswordBox)sender).Password;
+        }
+
+
     }
 }

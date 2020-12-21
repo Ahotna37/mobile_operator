@@ -15,11 +15,9 @@ namespace MobOperator.ViewModel
         private IMainWindowsCodeBehind _MainCodeBehind;
 
         //ctor
-        public ServiceModel(IMainWindowsCodeBehind codeBehind)
+        public ServiceModel(int idUsers)
         {
-            if (codeBehind == null) throw new ArgumentNullException(nameof(codeBehind));
 
-            _MainCodeBehind = codeBehind;
         }
     }
 }

@@ -10,7 +10,6 @@ namespace DAL.Entities
     public partial class ConnectService
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int idConnectServ { get; set; }
 
         public int? idClient { get; set; }
