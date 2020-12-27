@@ -34,14 +34,16 @@
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Border Background="White" Grid.Column="0" Grid.ColumnSpan="4"  Grid.RowSpan="16">
+        <Border Background="White" BorderBrush="Gainsboro"  Grid.Column="0" Grid.ColumnSpan="3" BorderThickness="1" Grid.RowSpan="16">
         </Border>
         <Label Grid.Column="0"  Grid.ColumnSpan="10" Grid.Row="0" Grid.RowSpan="100"  Margin="20" VerticalAlignment = "Top" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold">Пополнить счет
         </Label>
         
-        <Border Background="GhostWhite" BorderBrush="Gainsboro" CornerRadius="10" Grid.ColumnSpan="3" Grid.Column="1" BorderThickness="1" Grid.Row="2" Grid.RowSpan="15">
+        <Border Background="GhostWhite" BorderBrush="Gainsboro" CornerRadius="10" Grid.ColumnSpan="3" Grid.Column="1" BorderThickness="1" Grid.Row="2" Grid.RowSpan="13">
         </Border>
         <Label Grid.Column="1" Grid.Row="3" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold">Номер телефона
         </Label>
@@ -61,7 +63,8 @@
         <Label Grid.Column="1" Grid.Row="13" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold">CVV
         </Label>
         <TextBox Text="{Binding  TextBoxCVVText, Mode = OneWayToSource, UpdateSourceTrigger=PropertyChanged }" Grid.Column="2" Grid.Row="13" VerticalAlignment="Bottom"  />
-        <Button Command="{Binding LoadAddBalanceInDb, Mode = OneTime}" Grid.Column="2" Grid.Row="15" VerticalAlignment="Center" MaxWidth="300">Пополнить
+        <Label Grid.Column = "2" Grid.Row = "16" VerticalAlignment = "Bottom" FontSize = "20" HorizontalAlignment = "Center" Foreground="OrangeRed"  Content = "{Binding LabelErrorAddBalance, Mode = TwoWay, UpdateSourceTrigger=PropertyChanged}" FontWeight = "Bold" />
+        <Button Command="{Binding LoadAddBalanceInDb, Mode = OneTime}" Grid.Column="2" Grid.Row="18" VerticalAlignment="Center" MaxWidth="300">Пополнить
         </Button>
     </Grid>
 </UserControl>

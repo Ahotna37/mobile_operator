@@ -83,10 +83,6 @@ namespace DAL.Entities
                 .HasForeignKey(e => e.idClient);
 
             modelBuilder.Entity<ExtraService>()
-                .Property(e => e.name)
-                .IsFixedLength();
-
-            modelBuilder.Entity<ExtraService>()
                 .Property(e => e.subscFee)
                 .HasPrecision(18, 0);
 
@@ -117,6 +113,10 @@ namespace DAL.Entities
 
             modelBuilder.Entity<TariffPlan>()
                 .Property(e => e.costChangeTar)
+                .HasPrecision(18, 0);
+
+            modelBuilder.Entity<TariffPlan>()
+                .Property(e => e.costSms)
                 .HasPrecision(18, 0);
 
             modelBuilder.Entity<TariffPlan>()

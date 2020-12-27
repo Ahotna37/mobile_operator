@@ -35,8 +35,8 @@ namespace MobOperator.View
     }
     public partial class WindowBegin : Window, IBeginWindowCodeBehind
     {
-        public AutorisationModel autorisationVM;
-        public RegistrationModel registrationVM;
+        public AutorisationVM autorisationVM;
+        public RegistrationVM registrationVM;
         public WindowBegin()
         {
             InitializeComponent();
@@ -46,7 +46,7 @@ namespace MobOperator.View
         private void WindowBegin_Loaded(object sender, RoutedEventArgs e)
         {
             //загрузка вьюмодел для кнопок меню CodeBehindBegin
-            BeginWindowModel begin = new BeginWindowModel();
+            BeginWindowVM begin = new BeginWindowVM();
             //даем доступ к этому кодбихайнд
             begin.CodeBehindBegin = this;
             //делаем эту вьюмодел контекстом данных
@@ -61,7 +61,7 @@ namespace MobOperator.View
                 case ViewTypeBegin.Autorisation:
                     //загружаем вьюшку, ее вьюмодель
                     Autorisation autorisationView = new Autorisation();
-                    autorisationVM = new AutorisationModel(this);
+                    autorisationVM = new AutorisationVM(this);
                     autorisationView.DataContext = autorisationVM;
                     //отображаем
                     this.ContentAutorisationRegistration.Content = autorisationView;
@@ -69,23 +69,23 @@ namespace MobOperator.View
                 case ViewTypeBegin.Registration:
                     //загружаем вьюшку, ее вьюмодель
                     Registration registrationViev = new Registration();
-                    registrationVM = new RegistrationModel(this);
+                    registrationVM = new RegistrationVM(this);
                     registrationViev.DataContext = registrationVM;
                     //отображаем
                     this.ContentAutorisationRegistration.Content = registrationViev;
                     break;
                 case ViewTypeBegin.MainWindow:
                     //загружаем вьюшку, ее вьюмодель
-                    MainWindowModel mainWindowVM = null;
+                    MainWindowVM mainWindowVM = null;
                     if (autorisationVM.IdUser != 0)
                     {
-                        registrationVM = new RegistrationModel(this);
+                        registrationVM = new RegistrationVM(this);
                         registrationVM.IdUser = 0;
-                        mainWindowVM = new MainWindowModel(autorisationVM.IdUser);
+                        mainWindowVM = new MainWindowVM(autorisationVM.IdUser);
                     }
                     if ( registrationVM.IdUser != 0)
                     {
-                        mainWindowVM = new MainWindowModel(registrationVM.IdUser);
+                        mainWindowVM = new MainWindowVM(registrationVM.IdUser);
                     }
                     MainWindow mainWindow = new MainWindow();
                     mainWindowVM.CodeBehind = mainWindow;

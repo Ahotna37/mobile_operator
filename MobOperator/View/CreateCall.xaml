@@ -30,14 +30,16 @@
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Border Background="White" Grid.Column="0" Grid.ColumnSpan="20"  Grid.RowSpan="100">
+        <Border Background="White" BorderBrush="Gainsboro"  Grid.Column="0" Grid.ColumnSpan="10" BorderThickness="1" Grid.RowSpan="20">
         </Border>
-        <Label Grid.Column="0"  Grid.ColumnSpan="10" Grid.Row="0" Grid.RowSpan="100"  Margin="20" VerticalAlignment = "Top" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" Content="Совершить звонок"/>
-        <Border Background="GhostWhite" BorderBrush="Gainsboro" CornerRadius="10" Grid.ColumnSpan="3" Grid.Column="1" BorderThickness="1" Grid.Row="2" Grid.RowSpan="10">
+        <Label Grid.Column="0"  Grid.ColumnSpan="10" Grid.Row="0" Grid.RowSpan="100"  Margin="20" VerticalAlignment = "Top" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" Content="Добавить звонок"/>
+        <Border Background="GhostWhite" BorderBrush="Gainsboro" CornerRadius="10" Grid.ColumnSpan="3" Grid.Column="1" BorderThickness="1" Grid.Row="2" Grid.RowSpan="11">
         </Border>
-        <Label Grid.Column="1" Grid.Row="3" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold" Content="Кому звоним"/>
+        <Label Grid.Column="1" Grid.Row="3" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold" Content="Собеседник"/>
 
         <TextBox  Text="{Binding  TextBoxWhoWasCall, Mode = OneWayToSource, UpdateSourceTrigger=PropertyChanged }" Grid.Column="2" Grid.Row="3"  VerticalAlignment="Bottom"   />
         <Label Grid.Column="1" Grid.Row="5" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold" Content="Когда звонили"/>
@@ -47,15 +49,19 @@
 
         <TextBox  Text="{Binding  TextBoxTimeTalk, Mode = OneWayToSource, UpdateSourceTrigger=PropertyChanged }"   Grid.Column="2" Grid.Row="7" VerticalAlignment="Bottom" />
         <Label Grid.Column="1" Grid.Row="9" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold" Content="Тип звонка"/>
-
         <ComboBox SelectedValue="{Binding  ComboBoxTypeCallSelected, Mode = OneWayToSource,  UpdateSourceTrigger=PropertyChanged }" SelectedValuePath="Content" ItemsSource="{Binding ComboBoxTypeCallItems}" Grid.Column="2" Grid.Row="9"  VerticalAlignment="Bottom" >
             <ComboBoxItem Content="Городской" IsSelected="True"/>
             <ComboBoxItem Content="Междугородний"/>
             <ComboBoxItem Content="В другую страну"/>
         
         </ComboBox>
+        <Label Grid.Column="1" Grid.Row="11" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold" Content="Кто звонит"/>
 
-        <Button Command="{Binding LoadCreateCallInDb, Mode = OneTime}" Grid.Column="2" Grid.Row="13" VerticalAlignment="Center" MaxWidth="300">Сделать звонок
+        <ComboBox SelectedValue="{Binding  ComboBoxWhoCallSelected, Mode = OneWayToSource,  UpdateSourceTrigger=PropertyChanged }" SelectedValuePath="Content" ItemsSource="{Binding ComboBoxWhoCallItems}" Grid.Column="2" Grid.Row="11"  VerticalAlignment="Bottom" >
+            <ComboBoxItem Content="Исходящий" IsSelected="True"/>
+            <ComboBoxItem Content="Входящий"/>
+        </ComboBox>
+        <Button Command="{Binding LoadCreateCallInDb, Mode = OneTime}" Grid.Column="2" Grid.Row="14" VerticalAlignment="Center" MaxWidth="300">Сделать звонок
         </Button>
     </Grid>
 </UserControl>

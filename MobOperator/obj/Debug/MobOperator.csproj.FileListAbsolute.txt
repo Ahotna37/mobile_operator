@@ -79,3 +79,11 @@ C:\Users\Антон\source\repos\MobOperator\MobOperator\obj\Debug\View\CreateCa
 C:\Users\Антон\source\repos\MobOperator\MobOperator\obj\Debug\View\CreateCall.baml
 C:\Users\Антон\source\repos\MobOperator\MobOperator\obj\Debug\View\CreateSms.g.cs
 C:\Users\Антон\source\repos\MobOperator\MobOperator\obj\Debug\View\CreateSms.baml
+C:\Users\Антон\source\repos\MobOperator\MobOperator\obj\Debug\View\CheckListForPdf.g.cs
+C:\Users\Антон\source\repos\MobOperator\MobOperator\obj\Debug\View\CheckListForPdf.baml
+C:\Users\Антон\source\repos\MobOperator\MobOperator\bin\Debug\Syncfusion.Pdf.Base.dll
+C:\Users\Антон\source\repos\MobOperator\MobOperator\bin\Debug\System.Text.Encoding.CodePages.dll
+C:\Users\Антон\source\repos\MobOperator\MobOperator\bin\Debug\Syncfusion.Pdf.Base.xml
+C:\Users\Антон\source\repos\MobOperator\MobOperator\bin\Debug\Syncfusion.Compression.Base.dll
+C:\Users\Антон\source\repos\MobOperator\MobOperator\bin\Debug\Syncfusion.Licensing.dll
+C:\Users\Антон\source\repos\MobOperator\MobOperator\bin\Debug\Syncfusion.Compression.Base.xml

@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:MobOperator.View"
+             xmlns:local="clr-namespace:MobOperator.View" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              mc:Ignorable="d" 
              d:DesignHeight="675" d:DesignWidth="1200">
     <Grid>
@@ -29,50 +29,54 @@
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
+            <RowDefinition />
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Border Background="White" BorderBrush="Gainsboro" Grid.Column="0" Grid.ColumnSpan="4" BorderThickness="1" Grid.RowSpan="16" Margin="0,0,0,0.2">
+        <Border Background="White" BorderBrush="Gainsboro" Grid.Column="0" Grid.ColumnSpan="4" BorderThickness="1" Grid.RowSpan="20" >
         </Border>
-        <Label Grid.Column="2" Grid.Row="0" Grid.RowSpan="2"  Margin="457,20,457,0" VerticalAlignment = "Top" HorizontalAlignment="Center"  FontSize="20" FontWeight="Bold">Тарифы
+        <Label Grid.Column="2" Grid.Row="0" Grid.RowSpan="2"   VerticalAlignment = "Top" HorizontalAlignment="Center"  FontSize="20" FontWeight="Bold">Тарифы
         </Label>
-        <Grid Grid.Column="2" Grid.Row="2" Grid.RowSpan="8" Margin="0,42.2,0,0.2">
+        <Grid Grid.Column="2" Grid.Row="2" Grid.RowSpan="11" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="0.05*"/>
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
+                <RowDefinition Height="0.9*"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Border Background="GhostWhite"  BorderBrush="Gainsboro" CornerRadius="10" Grid.RowSpan="5" Grid.ColumnSpan="3">
+            <Border Background="GhostWhite"  BorderBrush="Gainsboro" CornerRadius="10" Grid.RowSpan="9" Grid.ColumnSpan="3">
             </Border>
-            <ListView Grid.Column="0" Grid.Row="1" Grid.RowSpan="10">
-
-                <ListViewItem Content="X" VerticalAlignment="Center" FontWeight="Bold">
-                </ListViewItem>
-                <ListViewItem Content="Смарт" VerticalAlignment="Center" FontWeight="Bold">
-                </ListViewItem>
+            <ListView  x:Name="List" SelectedValue="{Binding ListViewTariffSelected, Mode=TwoWay}" ItemsSource="{Binding TariffPlan}" Grid.Column="0" Grid.Row="0"  Grid.RowSpan="10">
+                <ListView.View  >
+                    <GridView  >
+                        <GridViewColumn DisplayMemberBinding="{Binding name}"   >
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
             </ListView>
-            <Label Grid.Column="0" Grid.Row="0" FontWeight="Bold" HorizontalAlignment="Center">Тарифы
+            <Label Grid.Column="0" Grid.Row="0" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center">Название
             </Label>
-            <Label Grid.Column="2" Grid.Row="0" FontWeight="Bold" HorizontalAlignment="Center">Характеристики
-            </Label>
-            <Label Grid.Column="2" Grid.Row="1" FontWeight="Bold">Стоимость
-            </Label>
-            <Label Grid.Column="2" Grid.Row="2" FontWeight="Bold">Минуты
-            </Label>
-            <Label Grid.Column="2" Grid.Row="3" FontWeight="Bold">СМС
-            </Label>
-            <Label Grid.Column="2" Grid.Row="4" FontWeight="Bold">Интернет
-            </Label>
+            <Label Content="{Binding CharachteristicTariff , Mode = TwoWay}" FontSize="14" Grid.Column="2" Grid.Row="0" FontWeight="Bold" HorizontalAlignment="Center"/>
 
+            <Label Content="{Binding LabelCostTariff , Mode = TwoWay}" Grid.Column="2" Grid.Row="1" FontWeight="Bold"/>
+            <Label Content="{Binding LabelFreeMinInMonth , Mode = TwoWay}" Grid.Column="2" Grid.Row="2" FontWeight="Bold"/>
+            <Label Content="{Binding LabelFreeInternetInMonth , Mode = TwoWay}" Grid.Column="2" Grid.Row="3" FontWeight="Bold"/>
+            <Label Content="{Binding LabelFreeSmsInMonth , Mode = TwoWay}" Grid.Column="2" Grid.Row="4" FontWeight="Bold"/>
+            <Label Content="{Binding LabelOneMinCity , Mode = TwoWay}" Grid.Column="2" Grid.Row="5" FontWeight="Bold"/>
+            <Label Content="{Binding LabelOneMinOutCity , Mode = TwoWay}" Grid.Column="2" Grid.Row="6" FontWeight="Bold" />
+            <Label Content="{Binding LabelOneMinInternation , Mode = TwoWay}" Grid.Column="2" Grid.Row="7" FontWeight="Bold" />
+            <Label Content="{Binding LabelCostSms , Mode = TwoWay}" Grid.Column="2" Grid.Row="8" FontWeight="Bold" />
         </Grid>
-
-        <Button Grid.Column="2" Grid.Row="11" VerticalAlignment="Center"  MaxWidth="300" Content="Подключить тариф" Margin="0,5.4,0,5"/>
+        <Button IsEnabled="{Binding TariffChangeButtonsEnabled, Mode=TwoWay,  UpdateSourceTrigger=PropertyChanged}"  Command="{Binding LoadChangeTariff, Mode = OneTime}"   Grid.Column="2" Grid.Row="14" VerticalAlignment="Center"  MaxWidth="300" Content="Подключить тариф" />
 
     </Grid>
 </UserControl>

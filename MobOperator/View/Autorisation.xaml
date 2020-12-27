@@ -33,14 +33,17 @@
             <RowDefinition />
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <Border Background="White" BorderBrush="Gainsboro"  Grid.Column="0" Grid.ColumnSpan="7" BorderThickness="1" Grid.RowSpan="16">
+        </Border>
         <Label Grid.Column="0"  Grid.ColumnSpan="10" Grid.Row="0" Grid.RowSpan="100"  Margin="20" VerticalAlignment = "Top" HorizontalAlignment = "Center" FontSize = "25" FontWeight = "Bold" Content="Авторизация" />
         <Label Grid.Column = "1" Grid.Row = "3" VerticalAlignment = "Bottom" FontSize = "20" HorizontalAlignment = "Left"  Content = "Логин" FontWeight = "Bold" />
         <TextBox Text="{Binding  TextBoxLoginText, Mode = OneWayToSource, UpdateSourceTrigger=PropertyChanged }"  Grid.Column = "2" Grid.Row = "3" BorderBrush = "DarkViolet" BorderThickness = "0 0 0 1" VerticalAlignment = "Bottom" />
         <Label Grid.Column = "1" Grid.Row = "5" VerticalAlignment = "Bottom" FontSize = "20" HorizontalAlignment = "Left"  Content = "Пароль" FontWeight = "Bold" />
         <PasswordBox  Grid.Column = "2" Grid.Row = "5" BorderBrush = "DarkViolet" BorderThickness = "0 0 0 1" VerticalAlignment = "Bottom" />
         <PasswordBox  PasswordChanged="PasswordBoxContentChanged"  Grid.Column = "2" Grid.Row = "5" BorderBrush = "DarkViolet" BorderThickness = "0 0 0 1" VerticalAlignment = "Bottom" />
-        <Button Command="{Binding LoadMainWindow, Mode = OneTime}" Content = "Войти" FontSize="16"  Grid.Column = "2"  Grid.Row = "8" MaxWidth="400" />
-        <Button Command="{Binding LoadRegistration, Mode = OneTime}" Content = "Зарегистрироваться" FontSize="16"  Grid.Column = "2" Grid.Row = "9" MaxWidth="400" />
+        <Label Grid.Column = "2" Grid.Row = "7" VerticalAlignment = "Bottom" FontSize = "20" HorizontalAlignment = "Center" Foreground="OrangeRed"  Content = "{Binding LabelErrorLog, Mode = TwoWay, UpdateSourceTrigger=PropertyChanged}" FontWeight = "Bold" />
+        <Button Command="{Binding LoadMainWindow, Mode = OneTime}" Content = "Войти" FontSize="16"  Grid.Column = "2"  Grid.Row = "9" MaxWidth="400" />
+        <Button Command="{Binding LoadRegistration, Mode = OneTime}" Content = "Зарегистрироваться" FontSize="16"  Grid.Column = "2" Grid.Row = "11" MaxWidth="400" />
         
     </Grid> 
 

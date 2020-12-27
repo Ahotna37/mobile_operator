@@ -40,6 +40,8 @@ namespace DAL.Entities
 
         public int id { get; set; }
 
+        public decimal? costSms { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ConnectTariff> ConnectTariff { get; set; }
     }

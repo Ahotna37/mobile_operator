@@ -17,10 +17,12 @@ namespace BLL.Models
         public int? timeTalk { get; set; }
 
         public string numberWasCall { get; set; }
+        public string incomingCallText { get; set; }
+        
 
         public int? callType { get; set; }
         public String callTypeString { get; set; }
-
+        public bool? incomingCall { get; set; }
         public int? idClient { get; set; }
 
         public int id { get; set; }
@@ -54,53 +56,62 @@ namespace BLL.Models
                     break;
             }
             costCall = Convert.ToDouble(call.costCall);
-            
-/*            if (client.freeMin == 0)
+            incomingCall = call.incomingCall;
+            switch (incomingCall)
             {
-                switch (callType)
-                {
-                    case 1:
-                        costCall = Convert.ToDouble(-(timeTalk * activeTariff.costOneMinCallCity));
-                        db.UpdateBalanceClient(Convert.ToInt32(call.idClient), Convert.ToInt32( costCall));
-                        break;
-                    case 2:
-                        costCall = Convert.ToDouble(-(timeTalk * activeTariff.costOneMinCallOutCity));
-                        db.UpdateBalanceClient(Convert.ToInt32(call.idClient), Convert.ToInt32(costCall));
-                        break;
-                    case 3:
-                        costCall = Convert.ToDouble(-(timeTalk * activeTariff.CostOneMinCallInternation));
-                        db.UpdateBalanceClient(Convert.ToInt32(call.idClient), Convert.ToInt32(costCall));
-                        break;
-                }
-            }else
-                if (client.freeMin > 0)
-            {
-                var timeFree = client.freeMin - timeTalk;
-                if (timeFree >= 0)
-                {
-                    costCall = 0;
-                    db.UpdateFreeMinForClient(Convert.ToInt32(call.idClient), Convert.ToInt32(timeFree));
-                }else
-                    if (timeFree < 0)
-                {
-                    db.UpdateFreeMinForClient(Convert.ToInt32(call.idClient), Convert.ToInt32(client.freeMin - client.freeMin));
-                    switch (callType)
-                    {
-                        case 1:
-                            costCall = Convert.ToDouble(timeFree * activeTariff.costOneMinCallCity);
-                            db.UpdateBalanceClient(Convert.ToInt32(call.idClient), Convert.ToInt32(costCall));
-                            break;
-                        case 2:
-                            costCall = Convert.ToDouble(timeFree * activeTariff.costOneMinCallOutCity);
-                            db.UpdateBalanceClient(Convert.ToInt32(call.idClient), Convert.ToInt32(costCall));
-                            break;
-                        case 3:
-                            costCall = Convert.ToDouble(timeFree * activeTariff.CostOneMinCallInternation);
-                            db.UpdateBalanceClient(Convert.ToInt32(call.idClient), Convert.ToInt32(costCall));
-                            break;
-                    }
-                }
-            }*/
+                case true:
+                    incomingCallText = "Исходящий";
+                    break;
+                case false:
+                    incomingCallText = "Входящий";
+                    break;
+            }
+            /*            if (client.freeMin == 0)
+                        {
+                            switch (callType)
+                            {
+                                case 1:
+                                    costCall = Convert.ToDouble(-(timeTalk * activeTariff.costOneMinCallCity));
+                                    db.UpdateBalanceClient(Convert.ToInt32(call.idClient), Convert.ToInt32( costCall));
+                                    break;
+                                case 2:
+                                    costCall = Convert.ToDouble(-(timeTalk * activeTariff.costOneMinCallOutCity));
+                                    db.UpdateBalanceClient(Convert.ToInt32(call.idClient), Convert.ToInt32(costCall));
+                                    break;
+                                case 3:
+                                    costCall = Convert.ToDouble(-(timeTalk * activeTariff.CostOneMinCallInternation));
+                                    db.UpdateBalanceClient(Convert.ToInt32(call.idClient), Convert.ToInt32(costCall));
+                                    break;
+                            }
+                        }else
+                            if (client.freeMin > 0)
+                        {
+                            var timeFree = client.freeMin - timeTalk;
+                            if (timeFree >= 0)
+                            {
+                                costCall = 0;
+                                db.UpdateFreeMinForClient(Convert.ToInt32(call.idClient), Convert.ToInt32(timeFree));
+                            }else
+                                if (timeFree < 0)
+                            {
+                                db.UpdateFreeMinForClient(Convert.ToInt32(call.idClient), Convert.ToInt32(client.freeMin - client.freeMin));
+                                switch (callType)
+                                {
+                                    case 1:
+                                        costCall = Convert.ToDouble(timeFree * activeTariff.costOneMinCallCity);
+                                        db.UpdateBalanceClient(Convert.ToInt32(call.idClient), Convert.ToInt32(costCall));
+                                        break;
+                                    case 2:
+                                        costCall = Convert.ToDouble(timeFree * activeTariff.costOneMinCallOutCity);
+                                        db.UpdateBalanceClient(Convert.ToInt32(call.idClient), Convert.ToInt32(costCall));
+                                        break;
+                                    case 3:
+                                        costCall = Convert.ToDouble(timeFree * activeTariff.CostOneMinCallInternation);
+                                        db.UpdateBalanceClient(Convert.ToInt32(call.idClient), Convert.ToInt32(costCall));
+                                        break;
+                                }
+                            }
+                        }*/
             idClient = call.idClient;
             id = call.id;
         }

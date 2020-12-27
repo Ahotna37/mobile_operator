@@ -21,6 +21,8 @@ namespace DAL.Entities
 
         public decimal? costCall { get; set; }
 
+        public bool? incomingCall { get; set; }
+
         public int? idClient { get; set; }
 
         public int id { get; set; }

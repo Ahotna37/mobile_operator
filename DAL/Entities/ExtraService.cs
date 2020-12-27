@@ -15,7 +15,7 @@ namespace DAL.Entities
             ConnectService = new HashSet<ConnectService>();
         }
 
-        [StringLength(10)]
+        [StringLength(50)]
         public string name { get; set; }
 
         public decimal? subscFee { get; set; }

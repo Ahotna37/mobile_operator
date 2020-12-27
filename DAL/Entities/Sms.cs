@@ -23,6 +23,8 @@ namespace DAL.Entities
 
         public decimal? costSMS { get; set; }
 
+        public bool? incomingSms { get; set; }
+
         public virtual Client Client { get; set; }
     }
 }

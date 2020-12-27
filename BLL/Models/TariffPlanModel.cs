@@ -19,6 +19,7 @@ namespace BLL.Models
         public bool? isPhysTar { get; set; }
         public decimal? costChangeTar { get; set; }
         public bool? CanConnectThisTar { get; set; }
+        public decimal? costSms { get; set; }
         public int id { get; set; }
 
         public int? freeMinuteForMonth { get; set; }
@@ -35,6 +36,7 @@ namespace BLL.Models
             costOneMinCallCity = tariff.costOneMinCallCity;
             costOneMinCallOutCity = tariff.costOneMinCallOutCity;
             CostOneMinCallInternation = tariff.CostOneMinCallInternation;
+            costSms = tariff.costSms;
             intGB = tariff.intGB;
             SMS = tariff.SMS;
             subscriptionFee = tariff.subcriptionFee;

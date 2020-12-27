@@ -86,9 +86,11 @@
   <ItemGroup>
     <Compile Include="DbOperation.cs" />
     <Compile Include="ICommand.cs" />
-    <Compile Include="Models\AddBalanceEntityModel.cs" />
+    <Compile Include="Models\AddBalanceModel.cs" />
     <Compile Include="Models\CallModel.cs" />
     <Compile Include="Models\ClientModel.cs" />
+    <Compile Include="Models\ConnectServiceModel.cs" />
+    <Compile Include="Models\ConnectTariffModel.cs" />
     <Compile Include="Models\ExtraServiceModel.cs" />
     <Compile Include="Models\SMSModel.cs" />
     <Compile Include="Models\TariffPlanModel.cs" />

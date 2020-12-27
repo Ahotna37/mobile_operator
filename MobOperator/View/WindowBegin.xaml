@@ -7,7 +7,7 @@
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         xmlns:local="clr-namespace:MobOperator.View"
         mc:Ignorable="d"
-          Title="WindowBegin" Height="675" Width="1200">
+          Title="WindowBegin" MinHeight="555" MinWidth="900" Height="675" Width="1200" Icon="/MobOperator;component/LOgo.ico">
     <Grid>
         <Grid.ColumnDefinitions>
 
@@ -34,7 +34,7 @@
             <RowDefinition />
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Image Source="/Group 3 (1).png" Grid.Column="0" Grid.Row="0" Grid.RowSpan="15"  VerticalAlignment="Top" HorizontalAlignment="left" />
+        <Image Source="/Group 3 (1).png" Grid.Column="0" Grid.Row="0" Grid.RowSpan="15"  VerticalAlignment="Top" Stretch="UniformToFill" HorizontalAlignment="left" />
         <ContentPresenter Grid.Column="2" Grid.RowSpan="100" x:Name="ContentAutorisationRegistration"/>
     </Grid>
 </Window>

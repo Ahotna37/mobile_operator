@@ -20,8 +20,11 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="0.15*"/>
             <RowDefinition Height="0.15*"/>
+            <RowDefinition Height="0.15*"/>
             <RowDefinition Height="0.10*"/>
         </Grid.RowDefinitions>
+        <Border Background="White" BorderBrush="Gainsboro"  Grid.Column="0" Grid.ColumnSpan="3" BorderThickness="1" Grid.RowSpan="16">
+        </Border>
         <Label  Grid.Column="0"  Grid.ColumnSpan="10" Grid.Row="0" Grid.RowSpan="100"  Margin="20"  VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="25" Content="Регистрация" FontWeight="Bold"/>
         <Grid Grid.Column="1" Grid.Row="1" >
 
@@ -77,23 +80,24 @@
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        <Label Grid.Column="1" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontWeight="Bold" Content="Название организации" Grid.ColumnSpan="2" Margin="0.2,0,0,0" >
+                        <Label Grid.Column="1" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontWeight="Bold" Content="Название организации" Grid.ColumnSpan="2"  >
                         </Label>
-                        <TextBox Text="{Binding TextBoxNameOrganizationText, Mode = OneWayToSource, UpdateSourceTrigger=PropertyChanged }" Grid.Column="2" Grid.Row="0"  BorderBrush="DarkViolet" BorderThickness="0 0 0 1" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Margin="211,0,0.2,0" />
-                        <Label Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontWeight="Bold" Content="Юридический адрес" Grid.ColumnSpan="2" Margin="0.2,0,0,0"/>
+                        <TextBox Text="{Binding TextBoxNameOrganizationText, Mode = OneWayToSource, UpdateSourceTrigger=PropertyChanged }" Grid.Column="3" Grid.Row="0"  BorderBrush="DarkViolet" BorderThickness="0 0 0 1" VerticalAlignment="Bottom" Grid.ColumnSpan="1"  />
+                        <Label Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontWeight="Bold" Content="Юридический адрес" Grid.ColumnSpan="2" />
 
-                        <TextBox Text="{Binding TextBoxLegalAdressText, Mode = OneWayToSource, UpdateSourceTrigger=PropertyChanged }" Grid.Column="2" Grid.Row="1"  BorderBrush="DarkViolet" BorderThickness="0 0 0 1" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Margin="211,0,0.2,0"  />
-                        <Label Grid.Column="1" Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontWeight="Bold" Content="ИНН" Margin="0.2,0,0,0"/>
-                        <TextBox Text="{Binding TextBoxITNText, Mode = OneWayToSource, UpdateSourceTrigger=PropertyChanged }" Grid.Column="2" Grid.Row="2"  BorderBrush="DarkViolet" BorderThickness="0 0 0 1" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Margin="211,0,0.2,0"  />
-                        <Label Grid.Column="1" Grid.Row="3" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontWeight="Bold" Content="Начало работы" Grid.ColumnSpan="2" Margin="0.2,0,0,0"/>
-                        <TextBox Text="{Binding TextBoxStartWorkText, Mode = OneWayToSource, UpdateSourceTrigger=PropertyChanged }" Grid.Column="2" Grid.Row="3"  BorderBrush="DarkViolet" BorderThickness="0 0 0 1" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Margin="211,0,0.2,0"  />
-                        <Label Grid.Column="1" Grid.Row="4" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontWeight="Bold" Content="Пароль" Margin="0.2,0,0,0"/>
-                        <TextBox Text="{Binding TextBoxPasswordLegalText,Mode = OneWayToSource, UpdateSourceTrigger=PropertyChanged }" Grid.Column="2" Grid.Row="4"  BorderBrush="DarkViolet" BorderThickness="0 0 0 1" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Margin="211,0,0.2,0"  />
+                        <TextBox Text="{Binding TextBoxLegalAdressText, Mode = OneWayToSource, UpdateSourceTrigger=PropertyChanged }" Grid.Column="3" Grid.Row="1"  BorderBrush="DarkViolet" BorderThickness="0 0 0 1" VerticalAlignment="Bottom" Grid.ColumnSpan="1"   />
+                        <Label Grid.Column="1" Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontWeight="Bold" Content="ИНН" />
+                        <TextBox Text="{Binding TextBoxITNText, Mode = OneWayToSource, UpdateSourceTrigger=PropertyChanged }" Grid.Column="3" Grid.Row="2"  BorderBrush="DarkViolet" BorderThickness="0 0 0 1" VerticalAlignment="Bottom" Grid.ColumnSpan="1"   />
+                        <Label Grid.Column="1" Grid.Row="3" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontWeight="Bold" Content="Начало работы" Grid.ColumnSpan="2" />
+                        <TextBox Text="{Binding TextBoxStartWorkText, Mode = OneWayToSource, UpdateSourceTrigger=PropertyChanged }" Grid.Column="3" Grid.Row="3"  BorderBrush="DarkViolet" BorderThickness="0 0 0 1" VerticalAlignment="Bottom" Grid.ColumnSpan="1"  />
+                        <Label Grid.Column="1" Grid.Row="4" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontWeight="Bold" Content="Пароль" Grid.ColumnSpan="2"/>
+                        <TextBox Text="{Binding TextBoxPasswordLegalText,Mode = OneWayToSource, UpdateSourceTrigger=PropertyChanged }" Grid.Column="3" Grid.Row="4"  BorderBrush="DarkViolet" BorderThickness="0 0 0 1" VerticalAlignment="Bottom" Grid.ColumnSpan="1"  />
                     </Grid>
                 </TabItem>
             </TabControl>
         </Grid>
-        <Button Command="{Binding LoadMainWindow, Mode = OneTime}" Content = "Создать" FontSize="16" Grid.Column="1" Grid.Row="2" MaxWidth="300"/>
-        <Button Command="{Binding LoadAutorisation, Mode = OneTime}" Content = "Назад" Grid.Column="1" FontSize="16" Grid.Row="3" MaxWidth="300"/>
+        <Label Grid.Column = "1" Grid.Row = "2" VerticalAlignment = "Bottom" FontSize = "20" HorizontalAlignment = "Center" Foreground="OrangeRed"  Content = "{Binding LabelErrorReg, Mode = TwoWay, UpdateSourceTrigger=PropertyChanged}" FontWeight = "Bold" />
+        <Button Command="{Binding LoadMainWindow, Mode = OneTime}" Content = "Создать" FontSize="16" Grid.Column="1" Grid.Row="3" MaxWidth="300"/>
+        <Button Command="{Binding LoadAutorisation, Mode = OneTime}" Content = "Назад" Grid.Column="1" FontSize="16" Grid.Row="4" MaxWidth="300"/>
     </Grid>
 </UserControl>

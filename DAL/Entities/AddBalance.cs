@@ -29,6 +29,9 @@ namespace DAL.Entities
 
         public int? CVVBankCard { get; set; }
 
+        [Column(TypeName = "date")]
+        public DateTime? dateAddBalance { get; set; }
+
         public virtual Client Client { get; set; }
     }
 }
