@@ -53,22 +53,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Entities\AddBalance.cs" />
     <Compile Include="Entities\Call.cs" />
     <Compile Include="Entities\Client.cs" />
     <Compile Include="Entities\ConnectService.cs" />
     <Compile Include="Entities\ConnectTariff.cs" />
+    <Compile Include="Entities\Context.cs" />
     <Compile Include="Entities\ExtraService.cs" />
-    <Compile Include="Entities\LegalPerson.cs" />
-    <Compile Include="Entities\Model1.cs" />
-    <Compile Include="Entities\PhisicalPerson.cs" />
     <Compile Include="Entities\Sms.cs" />
     <Compile Include="Entities\sysdiagrams.cs" />
     <Compile Include="Entities\TariffPlan.cs" />
-    <Compile Include="Entities\Worker.cs" />
-    <Compile Include="Interfaces\IDbRepos.cs" />
-    <Compile Include="Interfaces\IReportsRepository.cs" />
-    <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -76,6 +70,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Interfaces\" />
     <Folder Include="Repository\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -15,19 +15,32 @@ namespace DAL.Entities
             ConnectTariff = new HashSet<ConnectTariff>();
         }
 
-        [StringLength(10)]
+        [StringLength(50)]
         public string name { get; set; }
 
-        public decimal? subscrFee { get; set; }
+        public decimal? costOneMinCallCity { get; set; }
 
-        public decimal? costOneMinCall { get; set; }
+        public decimal? costOneMinCallOutCity { get; set; }
 
-        public int? intGB { get; set; }
+        public decimal? CostOneMinCallInternation { get; set; }
+
+        public float? intGB { get; set; }
 
         public int? SMS { get; set; }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public bool? isPhysTar { get; set; }
+
+        public decimal? costChangeTar { get; set; }
+
+        public bool? CanConnectThisTar { get; set; }
+
+        public int? subcriptionFee { get; set; }
+
+        public int? freeMinuteForMonth { get; set; }
+
         public int id { get; set; }
+
+        public decimal? costSms { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ConnectTariff> ConnectTariff { get; set; }

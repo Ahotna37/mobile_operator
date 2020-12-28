@@ -10,7 +10,6 @@ namespace DAL.Entities
     public partial class ConnectService
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int idConnectServ { get; set; }
 
         public int? idClient { get; set; }
@@ -18,7 +17,10 @@ namespace DAL.Entities
         public int? idExtraService { get; set; }
 
         [Column(TypeName = "date")]
-        public DateTime? dateConnect { get; set; }
+        public DateTime? dateConnectBegin { get; set; }
+
+        [Column(TypeName = "date")]
+        public DateTime? dateConnectEnd { get; set; }
 
         public virtual Client Client { get; set; }
 

@@ -15,11 +15,15 @@ namespace DAL.Entities
         [Column(TypeName = "date")]
         public DateTime? dateSms { get; set; }
 
-        [StringLength(10)]
+        [StringLength(50)]
         public string recipientSms { get; set; }
 
         [Column(TypeName = "text")]
         public string textSms { get; set; }
+
+        public decimal? costSMS { get; set; }
+
+        public bool? incomingSms { get; set; }
 
         public virtual Client Client { get; set; }
     }

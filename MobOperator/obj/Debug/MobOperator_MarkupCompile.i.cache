@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Антон\source\repos\MobOperator\MobOperator\View\App.xaml
-8-1005941553
+12-159022819
 
-19350623227
-125-1722980721
-View\AddBalance.xaml;View\CallAndSms.xaml;View\MainControl.xaml;View\PageRegisration.xaml;View\Service.xaml;View\Tariff.xaml;View\WindowAutorisation.xaml;View\MainWindow.xaml;
+29-2016516359
+133501271561
+View\AddBalance.xaml;View\Autorisation.xaml;View\CallAndSms.xaml;View\CheckListForPdf.xaml;View\CreateSms.xaml;View\CreateCall.xaml;View\MainControl.xaml;View\Registration.xaml;View\Service.xaml;View\Tariff.xaml;View\MainWindow.xaml;View\WindowBegin.xaml;
 
-True
+False
 

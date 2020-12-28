@@ -3,11 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:MobOperator.View"
+             xmlns:local="clr-namespace:MobOperator.View" xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
              mc:Ignorable="d" 
              d:DesignHeight="675" d:DesignWidth="1200">
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.05*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.05*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -25,83 +28,67 @@
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
+            <RowDefinition />
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Border Background="WhiteSmoke" BorderBrush="Gainsboro" Grid.Column="0" Grid.ColumnSpan="3" BorderThickness="1" Grid.RowSpan="16">
+        <Border Background="White" BorderBrush="Gainsboro" Grid.Column="0" Grid.ColumnSpan="3" BorderThickness="1" Grid.RowSpan="17">
         </Border>
-        <Label Grid.Column="3" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" Content="Звонки и СМС"/>
-        <TabControl Grid.Column="3" Grid.Row="2" Grid.RowSpan="13" >
-            <TabItem Header="Звонки">
-                <Grid >
-
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width ="1.2*"/>
-                        <ColumnDefinition Width ="*"/>
-                        <ColumnDefinition Width ="*"/>
-                        <ColumnDefinition Width ="1.2*"/>
-                        <ColumnDefinition Width ="*"/>
-                    </Grid.ColumnDefinitions>
+        <Label Grid.Column="0"  Grid.ColumnSpan="10" Grid.Row="0" Grid.RowSpan="100"  Margin="20" VerticalAlignment = "Top" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" Content="Звонки и СМС"/>
+        <TabControl Grid.Column="1" Grid.Row="2" Grid.RowSpan="11" >
+            <TabItem Header="Звонки" FontWeight="Bold">
+                <Grid Background="Lavender">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <Border BorderBrush="Black" BorderThickness =" 1 1 1 1"  Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5">
-                    </Border>
-                    <Label Grid.Column="0" HorizontalAlignment ="Center" VerticalAlignment="Center">Номер звонящего
-                    </Label>
-                    <Label Grid.Column="1" HorizontalAlignment ="Center" VerticalAlignment="Center">Кому звонили
-                    </Label>
-                    <Label Grid.Column="2" HorizontalAlignment ="Center" VerticalAlignment="Center">Дата звонка
-                    </Label>
-                    <Label Grid.Column="3" HorizontalAlignment ="Center" VerticalAlignment="Center">Время разговора
-                    </Label>
-                    <Label Grid.Column="4" HorizontalAlignment ="Center" VerticalAlignment="Center">Стоимость
-                    </Label>
+                    <DataGrid x:Name="Call" ItemsSource="{Binding Call}" CanUserAddRows="False" Grid.RowSpan="20" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Дата" Binding="{Binding Path=dateCallShort}" Width="0.26*"/>
+                            <DataGridTextColumn Header="Время" Binding="{Binding Path=timeTalk}" Width="0.2*"/>
+                            <DataGridTextColumn Header="Собеседник" Binding="{Binding Path=numberWasCall}" Width="0.3*"/>
+                            <DataGridTextColumn Header="Дистанция" Binding="{Binding Path=callTypeString}" Width="0.35*"/>
+                            <DataGridTextColumn Header="Цена" Binding="{Binding Path=costCall}" Width="0.2*"/>
+                            <DataGridTextColumn Header="Тип звонка" Binding="{Binding Path=incomingCallText}" Width="0.3*"/>
+                        </DataGrid.Columns>
+
+                    </DataGrid>
                 </Grid>
-
             </TabItem>
-            <TabItem Header="СМС">
-                <Grid >
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width ="*"/>
-                        <ColumnDefinition Width ="*"/>
-                        <ColumnDefinition Width ="*"/>
-                        <ColumnDefinition Width ="*"/>
-                    </Grid.ColumnDefinitions>
+            <TabItem Header="СМС" FontWeight="Bold">
+                <Grid Background="Lavender">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <Border BorderBrush="Black" BorderThickness =" 1 1 1 1"  Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4">
-                    </Border>
-                    <Label Grid.Column="0" HorizontalAlignment ="Center" VerticalAlignment="Center">Номер отправившего
-                    </Label>
-                    <Label Grid.Column="1" HorizontalAlignment ="Center" VerticalAlignment="Center">Кому отправили
-                    </Label>
-                    <Label Grid.Column="2" HorizontalAlignment ="Center" VerticalAlignment="Center">Дата отправки
-                    </Label>
-                    <Label Grid.Column="3" HorizontalAlignment ="Center" VerticalAlignment="Center">Стоимость
-                    </Label>
+                    <DataGrid  x:Name="Sms"   ItemsSource="{Binding Sms}" CanUserAddRows="False" Grid.RowSpan="20" AutoGenerateColumns="False" >
+                        <DataGrid.Columns >
+                            <DataGridTextColumn Header="Дата" Binding="{Binding Path=dateSmsShort}" Width="0.2*" />
+                            <DataGridTextColumn Header="Отправитель" Binding="{Binding Path=recipientSms}" Width="0.2*"/>
+                            <DataGridTextColumn Header="Текст СМС" Binding="{Binding Path=textSms}"  Width="0.6*" />
+                            <DataGridTextColumn Header="Тип" Binding="{Binding Path=incomingSmsText}"  Width="0.2*" />
+
+                            <DataGridTextColumn Header="Стоимость" Binding="{Binding Path=costSMS}" Width="0.18*"/>
+                        </DataGrid.Columns>
+
+                    </DataGrid>
                 </Grid>
             </TabItem>
         </TabControl>
+        <Button Command="{Binding LoadCreateCall, Mode = OneTime}" Grid.Column="1" Grid.Row="14" MinWidth="150" Content="Добавить звонок" HorizontalAlignment="Left"/>
+        <Button Command="{Binding LoadCreateSms, Mode = OneTime}" Grid.Column="1" Grid.Row="14" MinWidth="150" Content="Добавить СМС" HorizontalAlignment="Center" />
+        <ComboBox SelectedValue="{Binding  ComboBoxDateCheckListSelected, Mode = OneWayToSource,  UpdateSourceTrigger=PropertyChanged }" MinWidth="150" HorizontalAlignment="Right" FontWeight="Bold" SelectedValuePath="Content" FontSize="16"  ItemsSource="{Binding ComboBoxDateCheckList}" Grid.Column="1" Grid.Row="15"  VerticalAlignment="Bottom" >
+            <ComboBoxItem Content="Неделя" IsSelected="True"/>
+            <ComboBoxItem Content="Месяц"/>
+            <ComboBoxItem Content="Год"/>
+            <ComboBoxItem Content="Все время"/>
+
+        </ComboBox>
+        <Button Command="{Binding LoadCheckListForPdf, Mode = OneTime}" Grid.Column="1" Grid.Row="14" VerticalAlignment="Center" Content="Выписка " HorizontalAlignment="Right" MinWidth="150"  FontSize="16" />
     </Grid>
 </UserControl>

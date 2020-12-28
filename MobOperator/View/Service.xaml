@@ -8,6 +8,9 @@
              d:DesignHeight="675" d:DesignWidth="1200">
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.05*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.05*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -27,16 +30,16 @@
             <RowDefinition />
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Border Background="WhiteSmoke" BorderBrush="Gainsboro" Grid.Column="0" Grid.ColumnSpan="3" BorderThickness="1" Grid.RowSpan="16">
+        <Border Background="White" BorderBrush="Gainsboro" Grid.Column="0" Grid.ColumnSpan="3" BorderThickness="1" Grid.RowSpan="16">
         </Border>
-        <Label Grid.Column="3" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold">Услуги
+        <Label Grid.Column="0"  Grid.ColumnSpan="10" Grid.Row="0" Grid.RowSpan="100"  Margin="20" VerticalAlignment = "Top" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold">Услуги
         </Label>
 
-        <Grid Grid.Column="3" Grid.Row="3" Grid.RowSpan="7">
+        <Grid Grid.Column="1" Grid.Row="3" Grid.RowSpan="7">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="0.40*"/>
                 <ColumnDefinition Width="0.05*"/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="0.40*"/>
                 <ColumnDefinition Width="0.05*"/>
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
@@ -46,33 +49,41 @@
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
-            <Border Background="GhostWhite" BorderBrush="Gainsboro" CornerRadius="10" Grid.RowSpan="5" Grid.ColumnSpan="5">
+            <Border Background="GhostWhite" BorderBrush="Gainsboro" CornerRadius="10" Grid.RowSpan="8" Grid.ColumnSpan="5">
             </Border>
-            <ListView Grid.Column="2" Grid.Row="1" Grid.RowSpan="10">
-                <ListViewItem Content="Без роуминга" VerticalAlignment="Center">
-                </ListViewItem>
-                <ListViewItem Content="Доверительный платеж" VerticalAlignment="Center">
-                </ListViewItem>
+            <ListView  x:Name="ListConnectedServices" SelectedValue="{Binding ListViewServiceConnectedSelected, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding extraServicesConnected}" Grid.Column="0" Grid.Row="0"  Grid.RowSpan="10">
+                <ListView.View  >
+                    <GridView  >
+                        <GridViewColumn DisplayMemberBinding="{Binding name}"   >
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
             </ListView>
-            <Label Grid.Column="4" Grid.Row="0" HorizontalAlignment="Center" FontWeight="Bold">Характеристики
+            <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold">Уже подключены
             </Label>
-            <Label Grid.Column="4" Grid.Row="1">Стоимость
+            <Label Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold">Подключить
             </Label>
-            <Label Grid.Column="4" Grid.Row="2">Описание
-            </Label>
-            <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" FontWeight="Bold">Уже подключены
-            </Label>
-            <Label Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" FontWeight="Bold">Подключить
-            </Label>
-            <ListView Grid.Column="0" Grid.Row="1" Grid.RowSpan="10">
-
-                <ListViewItem Content="Родительский контроль" VerticalAlignment="Center" RenderTransformOrigin="0.511,-0.476">
-                </ListViewItem>
+            <ListView  x:Name="ListServices" SelectedValue="{Binding ListViewServiceSelected, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding extraServices}" Grid.Column="2" Grid.Row="0"  Grid.RowSpan="10">
+                <ListView.View  >
+                    <GridView  >
+                        <GridViewColumn DisplayMemberBinding="{Binding name}"   >
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
             </ListView>
+            <Label Grid.Column="4" Grid.Row="0" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold">Характеристики
+            </Label>
+            <Label  Content="{Binding LabelCostService, Mode = TwoWay}" Grid.Column="4" Grid.Row="1" />
+            <TextBlock Text="{Binding LabelDescriptionService , Mode = TwoWay}" TextWrapping="Wrap"  Grid.Column="4" Grid.Row="2"/> 
 
         </Grid>
-        <Button Grid.Column="3" Grid.Row="11" VerticalAlignment="Center" Margin="106.8,23.4,105.6,23.8" Grid.RowSpan="3" >Выбрать услугу
+        <Button Command="{Binding LoadAddService, Mode = OneTime}" IsEnabled="{Binding AddServiceButtonsEnabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="11" VerticalAlignment="Center" MaxWidth="300"  >Добавить услугу
+        </Button>
+        <Button Command="{Binding LoadDeleteService, Mode = OneTime}" IsEnabled="{Binding DeleteServiceButtonsEnabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="13" VerticalAlignment="Center" MaxWidth="300"  >Удалить услугу
         </Button>
     </Grid>
 </UserControl>

@@ -35,25 +35,30 @@ namespace MobOperator
         AddBalance,
         CallAndSms,
         Tariff,
-        Service
+        Service,
+        CreateCall,
+        CreateSms,
     }
     public partial class MainWindow : Window, IMainWindowsCodeBehind
     {
-        public MainWindow()
+        public int idUser;
+        public MainWindow( )
         {
             InitializeComponent();
+            Application.Current.MainWindow = this;
             this.Loaded += MainWindow_Loaded;
+            idUser = MainWindowVM.idUserNow;
             //DataContext = new MainWindowModel();
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            //загрузка вьюмодел для кнопок меню
+/*            //загрузка вьюмодел для кнопок меню
             MainWindowModel vm = new MainWindowModel();
             //даем доступ к этому кодбихайнд
             vm.CodeBehind = this;
             //делаем эту вьюмодел контекстом данных
-            this.DataContext = vm;
+            this.DataContext = vm;*/
             //загрузка стартовой View
             LoadView(ViewType.Main);
         }
@@ -64,8 +69,12 @@ namespace MobOperator
             {
                 case ViewType.Main:
                     //загружаем вьюшку, ее вьюмодель
+                    MainWindowVM mainWindowVM = new MainWindowVM(idUser);
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindowVM.CodeBehind = mainWindow;
+                    mainWindow.DataContext = mainWindowVM;
                     MainControl view = new MainControl();
-                    MainControlModel vm = new MainControlModel(this);
+                    MainControlVM vm = new MainControlVM(idUser);
                     view.DataContext = vm;
                     //отображаем
                     this.ContentPresenterOutput.Content = view;
@@ -73,7 +82,7 @@ namespace MobOperator
                 case ViewType.AddBalance:
                     //загружаем вьюшку, ее вьюмодель
                     AddBalance addBalanceView = new AddBalance();
-                    AddBalanceModel AddBalanceVm = new AddBalanceModel(this);
+                    AddBalanceVM AddBalanceVm = new AddBalanceVM(idUser);
                     addBalanceView.DataContext = AddBalanceVm;
                     //отображаем
                     this.ContentPresenterOutput.Content = addBalanceView;
@@ -81,7 +90,7 @@ namespace MobOperator
                 case ViewType.CallAndSms:
                     //загружаем вьюшку, ее вьюмодель
                     CallAndSms callAndSmsView = new CallAndSms();
-                    CallAndSmsModel callAndSmsVm = new CallAndSmsModel(this);
+                    CallAndSmsVM callAndSmsVm = new CallAndSmsVM(idUser,this);
                     callAndSmsView.DataContext = callAndSmsVm;
                     //отображаем
                     this.ContentPresenterOutput.Content = callAndSmsView;
@@ -89,7 +98,7 @@ namespace MobOperator
                 case ViewType.Tariff:
                     //загружаем вьюшку, ее вьюмодель
                     Tariff tariffview = new Tariff();
-                    TariffModel tariffVm = new TariffModel(this);
+                    TariffVM tariffVm = new TariffVM(idUser);
                     tariffview.DataContext = tariffVm;
                     //отображаем
                     this.ContentPresenterOutput.Content = tariffview;
@@ -97,11 +106,37 @@ namespace MobOperator
                 case ViewType.Service:
                     //загружаем вьюшку, ее вьюмодель
                     Service serviceView = new Service();
-                    ServiceModel serviceVm = new ServiceModel(this);
-                    serviceView.DataContext = serviceVm;
+                    ServiceVM serviceVM = new ServiceVM(idUser);
+                    serviceView.DataContext = serviceVM;
                     //отображаем
                     this.ContentPresenterOutput.Content = serviceView;
                     break;
+                case ViewType.CreateCall:
+                    //загружаем вьюшку, ее вьюмодель
+                    CreateCall callView = new CreateCall();
+                    CreateCallVM callVM = new CreateCallVM(idUser, this);
+                    callView.DataContext = callVM;
+                    //отображаем
+                    this.ContentPresenterOutput.Content = callView;
+                    break;
+                case ViewType.CreateSms:
+                    //загружаем вьюшку, ее вьюмодель
+                    CreateSms smsView = new CreateSms();
+                    CreateSmsVM smsVM = new CreateSmsVM(idUser, this);
+                    smsView.DataContext = smsVM;
+                    //отображаем
+                    this.ContentPresenterOutput.Content = smsView;
+                    break;
+                /*case ViewType.CheckListForPdf:
+                    //загружаем вьюшку, ее вьюмодель
+                    CheckListForPdf CheckListForPdfView = new CheckListForPdf();
+                    CheckListForPdfVM checkListForPdfVM = new CheckListForPdfVM(idUser,Convert.ToDateTime("01.01.2000"), Convert.ToDateTime("01.01.2020"));
+                    //checkListForPdfVM.CodeBehind = CheckListForPdfView;
+                    CheckListForPdfView.DataContext = checkListForPdfVM;
+                    CheckListForPdfView.Show();
+                    *//*                    //отображаем
+                                        this.ContentPresenterOutput.Content = CheckListForPdfView;*//*
+                    break;*/
             }
 
 

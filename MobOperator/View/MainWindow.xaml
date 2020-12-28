@@ -5,14 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MobOperator"
         mc:Ignorable="d"
-        Title="WindowAutorisarion" Height="675" Width="1200">
+        Background="WhiteSmoke"
+        Title="MainWindow" MinHeight="555" MinWidth="1000" Height="675" Width="1200" Icon="/MobOperator;component/LOgo.ico">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.015*" />
-            <ColumnDefinition Width="0.40*" />
-            <ColumnDefinition Width="0.015*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="8*" />
+            <ColumnDefinition Width="314*" />
+            <ColumnDefinition Width="8*" />
+            <ColumnDefinition Width="39.2" />
+            <ColumnDefinition Width="18*" />
+            <ColumnDefinition Width="767*"/>
+            <ColumnDefinition Width="39*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -30,24 +33,25 @@
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
+            <RowDefinition />
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Border Background="WhiteSmoke" BorderBrush="Gainsboro" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="1" Grid.RowSpan="16">
+        <Border Background="White" BorderBrush="Gainsboro" Grid.Column="0" Grid.ColumnSpan="3" BorderThickness="1" Grid.RowSpan="17">
         </Border>
-        <Label Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="14" FontWeight="Bold">Иванов Иван
-        </Label>
-        <Label Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="12" >Тариф Смарт
-        </Label>
-        <Button Command="{Binding LoadMainWindow, Mode = OneTime}" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Margin="10,23.2,10.2,23.2" Grid.RowSpan="3" >Главная
-        </Button>
-        <Button Command="{Binding LoadAddBalance, Mode = OneTime}" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" Margin="10,23.2,10.2,23.733" Grid.RowSpan="3" >Пополнить счет
-        </Button>
-        <Button Command="{Binding LoadCallAndSms, Mode = OneTime}" Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" Margin="10,23.6,10.2,23.6" Grid.RowSpan="3" >Звонки и СМС
-        </Button>
-        <Button Command="{Binding LoadTariff, Mode = OneTime}" Grid.Column="1" Grid.Row="8" VerticalAlignment="Center" Margin="10,22.8,10.2,24.4" Grid.RowSpan="3" >Тарифы
-        </Button>
-        <Button Command="{Binding LoadService, Mode = OneTime}" Grid.Column="1" Grid.Row="10" VerticalAlignment="Center" Margin="10,23.4,10.2,23.8" Grid.RowSpan="3" >Услуги
-        </Button>
-        <ContentPresenter Grid.Column="3" Grid.RowSpan="100" x:Name="ContentPresenterOutput"/>
+        <TextBlock Text="{Binding LabelNameUser, Mode = OneWay}" TextWrapping="Wrap"  Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" FontWeight="Bold" />
+
+        <TextBlock Text="{Binding  LabelNumberPhoneUser, Mode = OneWay}" TextWrapping="Wrap" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16" FontWeight="DemiBold" />
+        
+        <Button Command="{Binding LoadMainWindow, Mode = OneTime}" Grid.Column="1" Grid.Row="4" Content="Главная" FontSize="16" VerticalAlignment="Center"  />
+        <Button Command="{Binding LoadAddBalance, Mode = OneTime}" Grid.Column="1" Grid.Row="6" Content="Пополнить баланс" VerticalAlignment="Center" FontSize="16"  />
+
+        <Button Command="{Binding LoadCallAndSms, Mode = OneTime}" Grid.Column="1" Grid.Row="8" Content="Звонки и СМС" VerticalAlignment="Center" FontSize="16"  />
+
+        <Button Command="{Binding LoadTariff, Mode = OneTime}" Grid.Column="1" Grid.Row="10" VerticalAlignment="Center" Content="Тарифы"  FontSize="16" />
+
+        <Button Command="{Binding LoadService, Mode = OneTime}" Grid.Column="1" Grid.Row="12" VerticalAlignment="Center" Content="Услуги"  FontSize="16" />
+
+
+        <ContentPresenter Grid.Column="4" Grid.RowSpan="17" x:Name="ContentPresenterOutput" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>

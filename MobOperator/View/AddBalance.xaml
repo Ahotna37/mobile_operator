@@ -5,12 +5,16 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MobOperator.View"
              mc:Ignorable="d" 
+             Background="White"
              d:DesignHeight="675" d:DesignWidth="1200">
     <Grid>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-
+            <ColumnDefinition Width="0.08*"/>
+            <ColumnDefinition Width="0.30*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.08*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -28,30 +32,39 @@
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Border Background="WhiteSmoke" BorderBrush="Gainsboro" Grid.Column="0" Grid.ColumnSpan="3" BorderThickness="1" Grid.RowSpan="16">
+        <Border Background="White" BorderBrush="Gainsboro"  Grid.Column="0" Grid.ColumnSpan="3" BorderThickness="1" Grid.RowSpan="16">
         </Border>
-        <Label Grid.Column="3" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold">Пополнить счет
+        <Label Grid.Column="0"  Grid.ColumnSpan="10" Grid.Row="0" Grid.RowSpan="100"  Margin="20" VerticalAlignment = "Top" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold">Пополнить счет
         </Label>
-        <Border Background="GhostWhite" BorderBrush="Gainsboro" CornerRadius="10" Grid.Column="3" BorderThickness="1" Grid.Row="2" Grid.RowSpan="13">
+        
+        <Border Background="GhostWhite" BorderBrush="Gainsboro" CornerRadius="10" Grid.ColumnSpan="3" Grid.Column="1" BorderThickness="1" Grid.Row="2" Grid.RowSpan="13">
         </Border>
-        <Label Grid.Column="3" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="29.8,26,0,2.267" Grid.RowSpan="2">Номер телефона
+        <Label Grid.Column="1" Grid.Row="3" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold">Номер телефона
         </Label>
-        <TextBox Grid.Column="3" Grid.Row="2" Margin="176.8,26,9.6,24.667" Grid.RowSpan="3"   />
-        <Label Grid.Column="3" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="29.8,2.333,0,0.067">Номер карты
+        <TextBox  Text="{Binding  TextBoxNumberPhoneForAddText, Mode = OneWayToSource, UpdateSourceTrigger=PropertyChanged }" Grid.Column="2" Grid.Row="3"  VerticalAlignment="Bottom"   />
+        <Label Grid.Column="1" Grid.Row="5" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold">Сумма пополнения
         </Label>
-        <TextBox     Grid.Column="3" Grid.Row="4" Margin="167.8,25.733,9.6,0.067" Grid.RowSpan="2" />
-        <Label Grid.Column="3" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="29.8,2.267,0,0.133">Владелец карты
+        <TextBox  Text="{Binding  TextBoxSumForAddText, Mode = OneWayToSource, UpdateSourceTrigger=PropertyChanged }" Grid.Column="2" Grid.Row="5"  VerticalAlignment="Bottom"   />
+        <Label Grid.Column="1" Grid.Row="7" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold">Номер карты
         </Label>
-        <TextBox Grid.Column="3" Grid.Row="6" Margin="167.8,25.933,9.6,0.867" Grid.RowSpan="2"   />
-        <Label Grid.Column="3" Grid.Row="9" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="29.8,0.2,0,2.2">Срок службы карты
+        <TextBox  Text="{Binding  TextBoxNumberBankCardText, Mode = OneWayToSource, UpdateSourceTrigger=PropertyChanged }"   Grid.Column="2" Grid.Row="7" VerticalAlignment="Bottom" />
+        <Label Grid.Column="1" Grid.Row="9" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold">Владелец карты
         </Label>
-        <TextBox Grid.Column="3" Grid.Row="8" Margin="167.8,26.133,9.6,0.667" Grid.RowSpan="2"   />
-        <Label Grid.Column="3" Grid.Row="11" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="29.8,1.667,0,0.733">CVV
+        <TextBox Text="{Binding  TextBoxNameOfBankCardText, Mode = OneWayToSource, UpdateSourceTrigger=PropertyChanged }" Grid.Column="2" Grid.Row="9"  VerticalAlignment="Bottom" />
+        <Label Grid.Column="1" Grid.Row="11" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold">Срок службы карты
         </Label>
-        <TextBox Grid.Column="3" Grid.Row="10" Margin="167.8,26.333,9.6,25.867" Grid.RowSpan="3"   />
-        <Button Grid.Column="3" Grid.Row="12" VerticalAlignment="Center" Margin="105.8,24,107.6,23.2" Grid.RowSpan="3" >Пополнить
+        <TextBox Text="{Binding  TextBoxDateBankCardText, Mode = OneWayToSource, UpdateSourceTrigger=PropertyChanged }" Grid.Column="2" Grid.Row="11" VerticalAlignment="Bottom" />
+        <Label Grid.Column="1" Grid.Row="13" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold">CVV
+        </Label>
+        <TextBox Text="{Binding  TextBoxCVVText, Mode = OneWayToSource, UpdateSourceTrigger=PropertyChanged }" Grid.Column="2" Grid.Row="13" VerticalAlignment="Bottom"  />
+        <Label Grid.Column = "2" Grid.Row = "16" VerticalAlignment = "Bottom" FontSize = "20" HorizontalAlignment = "Center" Foreground="OrangeRed"  Content = "{Binding LabelErrorAddBalance, Mode = TwoWay, UpdateSourceTrigger=PropertyChanged}" FontWeight = "Bold" />
+        <Button Command="{Binding LoadAddBalanceInDb, Mode = OneTime}" Grid.Column="2" Grid.Row="18" VerticalAlignment="Center" MaxWidth="300">Пополнить
         </Button>
     </Grid>
 </UserControl>
